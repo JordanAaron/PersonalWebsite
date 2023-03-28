@@ -1,11 +1,35 @@
 import Container from '../components/container'
 import Layout from '../components/layout'
-import { getAboutMeSection, getAllPostsForHome } from '../lib/api'
+import { getAboutMeSection } from '../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import Image from 'next/image'
 
-export default function Index({ preview, aboutMeSection }) {
+interface Props {
+  preview: boolean,
+  aboutMeSection: {
+    siteIntroTitle: string,
+    profileDescription: string,
+    contactIconsCollection: {
+      items: [{
+        entryTitle: string,
+        icon: {
+          description: string,
+          url: string
+        }
+      }]
+    },
+    profileCard: {
+      cardImage: {
+        description: string,
+        url: string
+      },
+      cardDescription: string
+    }
+  }
+}
+
+export default function Index({ preview, aboutMeSection }: Props) {
   const { 
     siteIntroTitle: title, 
     profileDescription: profile, 
@@ -37,7 +61,7 @@ export default function Index({ preview, aboutMeSection }) {
           })}
           <Image 
             src={cardImage.url} 
-            alt={cardImage.descritpion} 
+            alt={cardImage.description} 
             width={300} 
             height={200}
           />
@@ -50,6 +74,7 @@ export default function Index({ preview, aboutMeSection }) {
 
 export async function getStaticProps({ preview = false }) {
   const aboutMeSection = await getAboutMeSection()
+  console.log(aboutMeSection)
   return {
     props: { preview, aboutMeSection },
   }
