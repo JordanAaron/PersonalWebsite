@@ -8,15 +8,18 @@ import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 
 export default function Index({ preview, allPosts }) {
+  console.log(allPosts);
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1)
   return (
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
-        </Head>
+          <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
+        </Head> 
+        {/* Head tag for SEO */}
         <Container>
+        {/* This container is where your page content goes */}
           <Intro />
           {heroPost && (
             <HeroPost
