@@ -25,8 +25,8 @@ type Props = {
 
 export const AboutMeSection = ({ title, profile, contactIcons, card }: Props) => {
   return (
-    <>
-      <p>{title}</p>
+    <section>
+      <p className='sm:underline'>{title}</p>
       <p>{profile}</p>
       {contactIcons.map((icon: Icon) => {
         const  { entryTitle, iconImage: { description, url }} = icon
@@ -41,6 +41,6 @@ export const AboutMeSection = ({ title, profile, contactIcons, card }: Props) =>
         )
       })}
       <Card card={card} />
-    </>
+    </section>
   )
 }

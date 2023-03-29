@@ -1,0 +1,13 @@
+.imageContainer {
+  position: relative;
+  height: 20rem;
+  border: 1px solid #0000004d;
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.descriptionContainer {
+  background-color: #59BAA9;
+  color: #EAF4F2;
+  padding: 2rem;
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.1);
+}

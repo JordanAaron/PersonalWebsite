@@ -3,7 +3,6 @@ import Layout from '../components/layout'
 import { getAboutMeSection } from '../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
-import Image from 'next/image'
 import { AboutMeSection } from '../components/AboutMeSection/aboutMeSection'
 
 interface Props {
