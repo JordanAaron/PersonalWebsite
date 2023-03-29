@@ -4,6 +4,7 @@ import { getAboutMeSection } from '../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import Image from 'next/image'
+import { AboutMeSection } from '../components/AboutMeSection/aboutMeSection'
 
 interface Props {
   preview: boolean,
@@ -13,7 +14,7 @@ interface Props {
     contactIconsCollection: {
       items: [{
         entryTitle: string,
-        icon: {
+        iconImage: {
           description: string,
           url: string
         }
@@ -34,7 +35,7 @@ export default function Index({ preview, aboutMeSection }: Props) {
     siteIntroTitle: title, 
     profileDescription: profile, 
     contactIconsCollection: contactIcons, 
-    profileCard: { cardImage, cardDescription } 
+    profileCard
   } = aboutMeSection
 
 
@@ -45,27 +46,12 @@ export default function Index({ preview, aboutMeSection }: Props) {
           <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
         </Head> 
         <Container>
-          <p>{title}</p>
-          <p>{profile}</p>
-          {contactIcons.items.map(item => {
-            const  { entryTitle, icon: { description, url }} = item
-            return (
-              <Image 
-                key={entryTitle} 
-                alt={description} 
-                src={url} 
-                width={50} 
-                height={50}
-              />
-            )
-          })}
-          <Image 
-            src={cardImage.url} 
-            alt={cardImage.description} 
-            width={300} 
-            height={200}
+          <AboutMeSection 
+            title={title}
+            profile={profile}
+            contactIcons={contactIcons.items}
+            card={profileCard}
           />
-          <p>{cardDescription}</p>
         </Container>
       </Layout>
     </>
