@@ -59,7 +59,6 @@ export default function Index({ preview, aboutMeSection }: Props) {
 
 export async function getStaticProps({ preview = false }) {
   const aboutMeSection = await getAboutMeSection()
-  console.log(aboutMeSection)
   return {
     props: { preview, aboutMeSection },
   }

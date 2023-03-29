@@ -11,7 +11,7 @@ type Props = {
 export const Card = ({ card }: Props) => {
   const { cardImage: { url, description }, cardDescription } = card
   return (
-    <div className={`w-80 mx-auto my-2`}>
+    <div className={`my-10`}>
       <div className={styles.imageContainer} >
         <Image
           src={url}

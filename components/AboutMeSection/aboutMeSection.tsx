@@ -1,5 +1,8 @@
 import Image from 'next/image'
+
 import { Card } from '../Card/card'
+
+import styles from './aboutMeSection.module.css'
 
 type Image = {
   description: string
@@ -25,21 +28,27 @@ type Props = {
 
 export const AboutMeSection = ({ title, profile, contactIcons, card }: Props) => {
   return (
-    <section>
-      <p className='sm:underline'>{title}</p>
-      <p>{profile}</p>
-      {contactIcons.map((icon: Icon) => {
-        const  { entryTitle, iconImage: { description, url }} = icon
-        return (
-          <Image 
-            key={entryTitle} 
-            src={url} 
-            alt={description} 
-            width={50} 
-            height={50}
-          />
-        )
-      })}
+    <section className='pt-10'>
+      <p className={`text-2xl font-semibold ${styles.title}`}>{title}</p>
+      <div className={`grid grid-cols-4 gap-x-1 my-4`}>
+        <div className={`col-span-3 ${styles.profileContainer}`}>
+          <p>{profile}</p>
+        </div>
+        <div className={`col-span-1 justify-self-end`}>
+          {contactIcons.map((icon: Icon) => {
+            const  { entryTitle, iconImage: { description, url }} = icon
+            return (
+              <Image 
+                key={entryTitle} 
+                src={url} 
+                alt={description} 
+                width={50} 
+                height={50}
+              />
+            )
+          })}
+        </div>
+      </div>
       <Card card={card} />
     </section>
   )
