@@ -6,12 +6,22 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        surfaceDuo: '540px',
+        tablet: '640px',
+        laptop: '1024px',
+        desktop: '1280px'
+      },
       colors: {
-        'accent-1': '#FAFAFA',
-        'accent-2': '#EAEAEA',
-        'accent-7': '#333',
-        success: '#0070f3',
-        cyan: '#79FFE1',
+        darkRed: '#8a394a',
+        mediumRed: '#ae2e49',
+        brightRed: '#db3a56',
+        darkGreen: '#558f7c',
+        mediumGreen: '#1abe91',
+        brightGreen: '#59baa9',
+        darkerWhite: '#eaf4f2',
+        lighterWhite: '#f2f2f2',
+        grey: '#525050',
       },
       spacing: {
         28: '7rem',

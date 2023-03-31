@@ -11,8 +11,8 @@ type Props = {
 export const Card = ({ card }: Props) => {
   const { cardImage: { url, description }, cardDescription } = card
   return (
-    <div className={`my-10`}>
-      <div className={styles.imageContainer} >
+    <div className={`${styles.container}`}>
+      <div className={`${styles.imageContainer}`} >
         <Image
           src={url}
           alt={description}
@@ -21,7 +21,7 @@ export const Card = ({ card }: Props) => {
       </div>
       <div className={styles.descriptionContainer}>
         {/* TODO: Create an entry in contentful for a card description title */}
-          <p style={{fontSize: "1.5rem", marginBottom: "1rem"}}>Hobbies/Interests</p> 
+          <p className={`${styles.descriptionTitle}`}>Hobbies/Interests</p> 
           <p>{cardDescription}</p>
       </div>
     </div>

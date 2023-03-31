@@ -28,30 +28,33 @@ type Props = {
 
 export const AboutMeSection = ({ title, profile, contactIcons, card }: Props) => {
   return (
-    <section className='pt-10'>
-      <div className={`grid grid-cols-4 gap-x-1`}>
-        <div className='col-span-3'>
-          <p className={`${styles.title} text-2xl font-semibold `}>{title}</p>
-          <div className={`${styles.profileContainer} my-4`}>
+    <section className={styles.container}>
+      <div className={styles.introContentLayout}>
+        <div>
+          <p className={`text-darkGreen text-2xl font-semibold`}>{title}</p>
+          <div className={`text-brightGreen my-4`}>
             <p>{profile}</p>
           </div>
         </div>
-        <div className={`col-span-1 justify-self-end my-auto`}>
+        <div className={`${styles.icons} justify-self-end my-auto`}>
           {contactIcons.map((icon: Icon) => {
             const  { entryTitle, iconImage: { description, url }} = icon
             return (
-              <Image 
-                key={entryTitle} 
-                src={url} 
-                alt={description} 
-                width={50} 
-                height={50}
-              />
+              <div style={{position: 'relative', width: '50px', height: '50px'}}> {/*TODO: move this to a css file  */}
+                <Image 
+                  key={entryTitle} 
+                  src={url} 
+                  alt={description}
+                  fill 
+                />
+              </div>
             )
           })}
         </div>
       </div>
+      <div className={styles.card}>
       <Card card={card} />
+      </div>
     </section>
   )
 }

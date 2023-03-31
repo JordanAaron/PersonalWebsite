@@ -1,7 +1,30 @@
-.title {
-  color: #558F7C;
+.container {
+  padding: 2.5rem 0; /*TODO: Change the method for centering this section*/
 }
 
-.profileContainer {
-  color: #59BAA9;
+.introContentLayout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+@media (min-width: theme(screens[tablet])) {
+  .container {
+    padding: 10rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2.5rem;
+  }
+
+  .introContentLayout {
+    display: block;
+    margin: auto;
+  }
+
+  .card {
+    margin: auto;
+  }
+
+  .icons {
+    display: flex;
+  }
 }
