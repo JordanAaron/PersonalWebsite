@@ -1,35 +1,18 @@
 import Container from '../components/container'
 import Layout from '../components/layout'
-import { getAboutMeSection } from '../lib/api'
+import { getAboutMeSection, getWorkExperienceSection } from '../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import { AboutMeSection } from '../components/AboutMeSection/aboutMeSection'
+import { AboutMeSectionType, WorkExperienceSectionType } from '../types/sections'
 
 interface Props {
   preview: boolean,
-  aboutMeSection: {
-    siteIntroTitle: string,
-    profileDescription: string,
-    contactIconsCollection: {
-      items: [{
-        entryTitle: string,
-        iconImage: {
-          description: string,
-          url: string
-        }
-      }]
-    },
-    profileCard: {
-      cardImage: {
-        description: string,
-        url: string
-      },
-      cardDescription: string
-    }
-  }
+  aboutMeSection: AboutMeSectionType
+  workExperienceSection: WorkExperienceSectionType
 }
 
-export default function Index({ preview, aboutMeSection }: Props) {
+export default function Index({ preview, aboutMeSection, workExperienceSection }: Props) {
   const { 
     siteIntroTitle: title, 
     profileDescription: profile, 
@@ -37,6 +20,7 @@ export default function Index({ preview, aboutMeSection }: Props) {
     profileCard
   } = aboutMeSection
 
+  console.log(workExperienceSection)
 
   return (
     <>
@@ -59,7 +43,10 @@ export default function Index({ preview, aboutMeSection }: Props) {
 
 export async function getStaticProps({ preview = false }) {
   const aboutMeSection = await getAboutMeSection()
+  const workExperienceSection = await getWorkExperienceSection()
+
+
   return {
-    props: { preview, aboutMeSection },
+    props: { preview, aboutMeSection, workExperienceSection },
   }
 }
