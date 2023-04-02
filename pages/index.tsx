@@ -1,6 +1,6 @@
 import Container from '../components/container'
 import Layout from '../components/layout'
-import { getAboutMeSection, getWorkExperienceSection } from '../lib/api'
+import { getAboutMeSection, getSkillsSection, getWorkExperienceSection } from '../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import { AboutMeSection } from '../components/AboutMeSection/aboutMeSection'
@@ -44,7 +44,8 @@ export default function Index({ preview, aboutMeSection, workExperienceSection }
 export async function getStaticProps({ preview = false }) {
   const aboutMeSection = await getAboutMeSection()
   const workExperienceSection = await getWorkExperienceSection()
-
+  const skillsSection = await getSkillsSection()
+  console.log(skillsSection)
 
   return {
     props: { preview, aboutMeSection, workExperienceSection },
