@@ -4,22 +4,26 @@ import { getAboutMeSection, getSkillsSection, getWorkExperienceSection } from '.
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import { AboutMeSection } from '../components/AboutMeSection/aboutMeSection'
-import { AboutMeSectionType, WorkExperienceSectionType } from '../types/sections'
+import { AboutMeSectionType, SkillsSectionType, WorkExperienceSectionType } from '../types/sections'
 import { WorkExperienceSection } from '../components/WorkExperienceSection/workExperienceSection'
+import { SkillsSection } from '../components/SkillsSection/skillsSection'
 
 interface Props {
   preview: boolean,
   aboutMeSection: AboutMeSectionType
   workExperienceSection: WorkExperienceSectionType
+  skillsSection: SkillsSectionType
 }
 
-export default function Index({ preview, aboutMeSection, workExperienceSection }: Props) {
+export default function Index({ preview, aboutMeSection, workExperienceSection, skillsSection }: Props) {
   const { 
     siteIntroTitle: title, 
     profileDescription: profile, 
     contactIconsCollection: contactIcons, 
     profileCard
   } = aboutMeSection
+
+  console.log(skillsSection)
 
   return (
     <>
@@ -35,6 +39,7 @@ export default function Index({ preview, aboutMeSection, workExperienceSection }
             card={profileCard}
           />
           <WorkExperienceSection jobs={workExperienceSection.jobsCollection.items}/>
+          <SkillsSection sectionTitle={skillsSection.sectionTitle} skills={skillsSection.skillCardsCollection.items} />
         </Container>
       </Layout>
     </>
@@ -45,9 +50,8 @@ export async function getStaticProps({ preview = false }) {
   const aboutMeSection = await getAboutMeSection()
   const workExperienceSection = await getWorkExperienceSection()
   const skillsSection = await getSkillsSection()
-  console.log(skillsSection)
 
   return {
-    props: { preview, aboutMeSection, workExperienceSection },
+    props: { preview, aboutMeSection, workExperienceSection, skillsSection },
   }
 }

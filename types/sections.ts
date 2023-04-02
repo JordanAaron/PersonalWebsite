@@ -31,3 +31,11 @@ export type WorkExperienceSectionType = {
     }]
   }
 }
+
+export type SkillsSectionType = {
+  entryTitle: string
+  sectionTitle: string
+  skillCardsCollection: {
+    items: CardType[]
+  }
+}
