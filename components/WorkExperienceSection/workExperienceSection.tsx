@@ -44,7 +44,11 @@ export const WorkExperienceSection = ({ jobs }: Props) => {
                 </>
               ) : (
                 <>
-                  <div>{jobDescription}</div>
+                  <div className={`${styles.jobDetails} text-brightGreen`}>
+                    <p>{jobTitle}</p>
+                    <p>{companyName}</p>
+                    <p>{date}</p>
+                  </div>
                   <div style={{position: 'relative', width: '100px', height: '100px'}}>
                     <Image 
                       src={companyLogo.url} 
@@ -56,6 +60,7 @@ export const WorkExperienceSection = ({ jobs }: Props) => {
                 </>
               )}
             </div>
+            <p className="text-mediumGreen my-8">{jobDescription}</p>
           </div>
         )
       })}
