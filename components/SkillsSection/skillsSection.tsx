@@ -1,6 +1,8 @@
 import { CardType } from "../../types/components"
 import { Card } from "../Card/card"
 
+import styles from './skillsSection.module.css'
+
 type Props = {
   sectionTitle: string
   skills: CardType[]
@@ -8,13 +10,15 @@ type Props = {
 
 export const SkillsSection = ({ sectionTitle, skills }: Props) => {
   return(
-    <div>
-      <p>{sectionTitle}</p>
-      {skills.map((skillCard: CardType) => {
-        return(
-          <Card card={skillCard}/>
-        )
-      })}
-    </div>
+    <section className={styles.container}>
+      <p className="text-darkGreen text-2xl font-semibold my-8">{sectionTitle}</p>
+      <div className={styles.skillCardsContainer} >
+        {skills.map((skillCard: CardType) => {
+          return(
+            <Card key={skillCard.entryTitle} card={skillCard}/>
+          )
+        })}
+      </div>
+    </section>
   )
 }

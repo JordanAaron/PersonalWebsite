@@ -1,0 +1,19 @@
+.container {
+  padding: 2.5rem 0;
+}
+
+@media (min-width: theme(screens[tablet])) {
+  .skillCardsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: theme(screens[laptop])) {
+  .skillCardsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}

@@ -23,8 +23,6 @@ export default function Index({ preview, aboutMeSection, workExperienceSection, 
     profileCard
   } = aboutMeSection
 
-  console.log(skillsSection)
-
   return (
     <>
       <Layout preview={preview}>
@@ -38,8 +36,8 @@ export default function Index({ preview, aboutMeSection, workExperienceSection, 
             contactIcons={contactIcons.items}
             card={profileCard}
           />
-          <WorkExperienceSection jobs={workExperienceSection.jobsCollection.items}/>
           <SkillsSection sectionTitle={skillsSection.sectionTitle} skills={skillsSection.skillCardsCollection.items} />
+          <WorkExperienceSection jobs={workExperienceSection.jobsCollection.items}/>
         </Container>
       </Layout>
     </>
