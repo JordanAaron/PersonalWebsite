@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import { Card } from '../Card/card'
+import { CardType } from '../../types/components'
 
 import styles from './aboutMeSection.module.css'
 
@@ -13,11 +14,6 @@ type Icon = {
   entryTitle: string
   iconImage: Image
 }
-
-export type CardType = {
-  cardImage: Image
-  cardDescription: string
-} //TODO: Move this to a generic location
 
 type Props = {
   title: string
@@ -40,12 +36,12 @@ export const AboutMeSection = ({ title, profile, contactIcons, card }: Props) =>
           {contactIcons.map((icon: Icon) => {
             const  { entryTitle, iconImage: { description, url }} = icon
             return (
-              <div style={{position: 'relative', width: '50px', height: '50px'}}> {/*TODO: move this to a css file  */}
+              <div key={entryTitle} style={{position: 'relative', width: '50px', height: '50px'}}> {/*TODO: move this to a css file  */}
                 <Image 
-                  key={entryTitle} 
                   src={url} 
                   alt={description}
                   fill 
+                  //TODO: https://nextjs.org/docs/api-reference/next/image#sizes 
                 />
               </div>
             )

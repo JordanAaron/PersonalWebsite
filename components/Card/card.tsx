@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import { CardType } from "../AboutMeSection/aboutMeSection"
+import { CardType } from "../../types/components"
 
 import styles from './card.module.css'
 
@@ -9,19 +9,24 @@ type Props = {
 }
 
 export const Card = ({ card }: Props) => {
-  const { cardImage: { url, description }, cardDescription } = card
+  // const { cardImage: { url, description }, cardDescription } = card
+  const { cardImage, cardTitle,cardDescription } = card
+
   return (
     <div className={`${styles.container}`}>
       <div className={`${styles.imageContainer}`} >
-        <Image
-          src={url}
-          alt={description}
-          fill
-        />
+        {cardImage && (
+          <Image
+            src={cardImage?.url}
+            alt={cardImage?.description}
+            fill
+            //TODO: https://nextjs.org/docs/api-reference/next/image#sizes 
+          />
+        )}
       </div>
       <div className={styles.descriptionContainer}>
-        {/* TODO: Create an entry in contentful for a card description title */}
           <p className={`${styles.descriptionTitle}`}>Hobbies/Interests</p> 
+          <p>{cardTitle}</p>
           <p>{cardDescription}</p>
       </div>
     </div>

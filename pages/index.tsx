@@ -5,6 +5,7 @@ import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import { AboutMeSection } from '../components/AboutMeSection/aboutMeSection'
 import { AboutMeSectionType, WorkExperienceSectionType } from '../types/sections'
+import { WorkExperienceSection } from '../components/WorkExperienceSection/workExperienceSection'
 
 interface Props {
   preview: boolean,
@@ -20,8 +21,6 @@ export default function Index({ preview, aboutMeSection, workExperienceSection }
     profileCard
   } = aboutMeSection
 
-  console.log(workExperienceSection)
-
   return (
     <>
       <Layout preview={preview}>
@@ -35,6 +34,7 @@ export default function Index({ preview, aboutMeSection, workExperienceSection }
             contactIcons={contactIcons.items}
             card={profileCard}
           />
+          <WorkExperienceSection jobs={workExperienceSection.jobsCollection.items}/>
         </Container>
       </Layout>
     </>

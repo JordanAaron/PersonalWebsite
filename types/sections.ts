@@ -1,3 +1,5 @@
+import { CardType } from "./components"
+
 export type AboutMeSectionType = {
   siteIntroTitle: string,
     profileDescription: string,
@@ -10,13 +12,7 @@ export type AboutMeSectionType = {
         }
       }]
     },
-    profileCard: {
-      cardImage: {
-        description: string,
-        url: string
-      },
-      cardDescription: string
-    }
+    profileCard: CardType
 }
 
 export type WorkExperienceSectionType = {
