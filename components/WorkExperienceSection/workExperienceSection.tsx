@@ -6,7 +6,6 @@ import { Job } from "../../types/components"
 
 import styles from './workExperienceSection.module.css'
 
-
 type Props = {
   jobs: Job[]
 }
