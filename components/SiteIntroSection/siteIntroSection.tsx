@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Card } from '../Card/card'
 import { CardType } from '../../types/components'
 
-import styles from './aboutMeSection.module.css'
+import styles from './siteIntroSection.module.css'
 
 type Image = {
   description: string
@@ -23,7 +23,7 @@ type Props = {
   card: CardType
 }
 
-export const AboutMeSection = ({ title, profile, contactIcons, card }: Props) => {
+export const SiteIntroSection = ({ title, profile, contactIcons, card }: Props) => {
   return (
     <section className={styles.container}>
       <div className={styles.introContentLayout}>

@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import Container from '../components/container'
 import Layout from '../components/layout'
-import { AboutMeSection } from '../components/AboutMeSection/aboutMeSection'
+import { SiteIntroSection } from '../components/SiteIntroSection/siteIntroSection'
 import { SkillsSection } from '../components/SkillsSection/skillsSection'
 import { WorkExperienceSection } from '../components/WorkExperienceSection/workExperienceSection'
 import { AboutMeSectionType, SkillsSectionType, WorkExperienceSectionType } from '../types/sections'
@@ -33,7 +33,7 @@ export default function Index({ preview, aboutMeSection, workExperienceSection, 
           <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
         </Head> 
         <Container>
-          <AboutMeSection 
+          <SiteIntroSection 
             title={title}
             profile={profile}
             contactIcons={contactIcons.items}
