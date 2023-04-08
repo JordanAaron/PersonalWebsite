@@ -28,8 +28,8 @@ export const SiteIntroSection = ({ title, profile, contactIcons, card }: Props) 
     <section className={styles.container}>
       <div className={styles.introContentLayout}>
         <div>
-          <p className={`text-darkGreen text-2xl font-semibold`}>{title}</p>
-          <div className={`text-brightGreen my-4`}>
+          <p className={`text-darkGreen lg:text-4xl font-semibold`}>{title}</p>
+          <div className={`text-brightGreen lg:text-3xl my-4`}>
             <p>{profile}</p>
           </div>
         </div>

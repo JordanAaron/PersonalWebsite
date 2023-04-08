@@ -6,7 +6,7 @@
 
 .imageContainer {
   position: relative;
-  height: 40vh;
+  height: 20rem;
   box-shadow: 3px 4px 4px #0000001a;
 }
 
@@ -25,14 +25,22 @@
 
 @media (min-width: theme(screens[surfaceDuo])) {
   .container {
+    min-width: 20rem;
     max-width: 25rem;
+  }
+
+  .imageContainer {
+    height: 25rem;
   }
 }
 
 @media (min-width: theme(screens[tablet])) {
   .container {
-    max-width: none;
     margin: 0 auto;
+  }
+
+  .imageContainer {
+    min-width: 22rem;
   }
 
   .descriptionTitle {
@@ -43,6 +51,5 @@
 @media (min-width: theme(screens[laptop])) {
   .container {
     margin: 0;
-    max-width: none;
   }
 }

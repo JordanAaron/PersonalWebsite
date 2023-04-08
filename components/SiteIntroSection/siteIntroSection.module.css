@@ -9,7 +9,7 @@
 
 @media (min-width: theme(screens[tablet])) {
   .container {
-    padding: 10rem 0;
+    padding: 10rem 4rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 2.5rem;
@@ -27,4 +27,15 @@
   .icons {
     display: flex;
   }
+}
+
+@media (min-width: theme(screens[laptop])) {
+  .container {
+    padding: 10rem 4rem;
+  }
+
+  /* .card {
+    margin: 0;
+    justify-self: right;
+  } */
 }
