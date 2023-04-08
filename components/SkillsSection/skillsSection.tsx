@@ -1,3 +1,5 @@
+import React from "react"
+
 import { CardType } from "../../types/components"
 import { Card } from "../Card/card"
 

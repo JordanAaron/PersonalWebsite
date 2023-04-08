@@ -1,12 +1,15 @@
+import React from 'react'
+import Head from 'next/head'
+
 import Container from '../components/container'
 import Layout from '../components/layout'
-import { getAboutMeSection, getSkillsSection, getWorkExperienceSection } from '../lib/api'
-import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
 import { AboutMeSection } from '../components/AboutMeSection/aboutMeSection'
-import { AboutMeSectionType, SkillsSectionType, WorkExperienceSectionType } from '../types/sections'
-import { WorkExperienceSection } from '../components/WorkExperienceSection/workExperienceSection'
 import { SkillsSection } from '../components/SkillsSection/skillsSection'
+import { WorkExperienceSection } from '../components/WorkExperienceSection/workExperienceSection'
+import { AboutMeSectionType, SkillsSectionType, WorkExperienceSectionType } from '../types/sections'
+
+import { getAboutMeSection, getSkillsSection, getWorkExperienceSection } from '../lib/api'
+import { CMS_NAME } from '../lib/constants'
 
 interface Props {
   preview: boolean,
