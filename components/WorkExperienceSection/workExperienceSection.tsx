@@ -1,22 +1,10 @@
 import Image from "next/image"
 
-import styles from './workExperienceSection.module.css'
-import { Document } from "@contentful/rich-text-types"
 import { RichText } from "../RichText/richText"
+import { Job } from "../../types/components"
 
-type Job = {
-  companyName: string
-  companyLogo: {
-    description: string
-    url: string
-  }
-  date: string
-  jobTitle: string
-  description: {
-    json: Document
-  }
-  imageOnLeft: boolean
-}
+import styles from './workExperienceSection.module.css'
+
 
 type Props = {
   jobs: Job[]
