@@ -1,4 +1,5 @@
 import { CardType } from "./components"
+import { Document } from '@contentful/rich-text-types'
 
 export type AboutMeSectionType = {
   siteIntroTitle: string,
@@ -27,6 +28,9 @@ export type WorkExperienceSectionType = {
       date: string
       jobTitle: string
       jobDescription: string
+      description: {
+        json: Document
+      }
       imageOnLeft: boolean
     }]
   }

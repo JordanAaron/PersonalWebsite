@@ -1,6 +1,8 @@
 import Image from "next/image"
 
 import styles from './workExperienceSection.module.css'
+import { Document } from "@contentful/rich-text-types"
+import { RichText } from "../RichText/richText"
 
 type Job = {
   companyName: string
@@ -10,7 +12,9 @@ type Job = {
   }
   date: string
   jobTitle: string
-  jobDescription: string
+  description: {
+    json: Document
+  }
   imageOnLeft: boolean
 }
 
@@ -23,7 +27,8 @@ export const WorkExperienceSection = ({ jobs }: Props) => {
     <section className={styles.container}>
       <p className="text-darkGreen text-2xl font-semibold">Work Experience</p>
       {jobs.map((job: Job) => {
-        const {companyName, companyLogo, date, jobTitle, jobDescription, imageOnLeft} = job
+        const {companyName, companyLogo, date, jobTitle, description, imageOnLeft} = job
+
         return (
           <div key={companyName} className={styles.jobContainer} >
             <div className={styles.jobDescriptionContainer}>
@@ -60,7 +65,7 @@ export const WorkExperienceSection = ({ jobs }: Props) => {
                 </>
               )}
             </div>
-            <p className="text-mediumGreen my-8">{jobDescription}</p>
+            <RichText content={description.json} />
           </div>
         )
       })}
