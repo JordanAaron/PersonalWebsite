@@ -5,11 +5,19 @@ type Image = {
   url: string
 }
 
+type CardContent = {
+  cardTitle: string
+  cardDescription: {
+    json: Document
+  }
+}
+
 export type CardType = {
   entryTitle: string
   cardImage?: Image
-  cardTitle: string
-  cardDescription: string
+  cardContentEntriesCollection: {
+    items: CardContent[]
+  }
   cardColor: string
 }
 

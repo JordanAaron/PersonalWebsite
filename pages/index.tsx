@@ -6,14 +6,14 @@ import Layout from '../components/layout'
 import { SiteIntroSection } from '../components/SiteIntroSection/siteIntroSection'
 import { SkillsSection } from '../components/SkillsSection/skillsSection'
 import { WorkExperienceSection } from '../components/WorkExperienceSection/workExperienceSection'
-import { AboutMeSectionType, SkillsSectionType, WorkExperienceSectionType } from '../types/sections'
+import { SiteIntroSectionType, SkillsSectionType, WorkExperienceSectionType } from '../types/sections'
 
 import { getAboutMeSection, getSkillsSection, getWorkExperienceSection } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
 
 interface Props {
   preview: boolean,
-  aboutMeSection: AboutMeSectionType
+  aboutMeSection: SiteIntroSectionType
   workExperienceSection: WorkExperienceSectionType
   skillsSection: SkillsSectionType
 }

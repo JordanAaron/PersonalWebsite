@@ -1,7 +1,7 @@
 import { CardType } from "./components"
 import { Document } from '@contentful/rich-text-types'
 
-export type AboutMeSectionType = {
+export type SiteIntroSectionType = {
   siteIntroTitle: string,
     profileDescription: string,
     contactIconsCollection: {
