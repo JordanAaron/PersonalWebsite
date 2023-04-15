@@ -21,45 +21,42 @@ export const Card = ({ card }: Props) => {
     switch (cardColor) {
       case 'brightGreen':
         return (
-          <div className={`${styles.descriptionContainer} bg-brightGreen ${cardImage ? '' : 'h-full'}`}>
-            {cardContentEntries.items.map(( cardContent ) => {
-              return (
-                <>
-                  <p className={`${styles.descriptionTitle}`}>{cardContent.cardTitle}</p>
-                  <RichText content={cardContent.cardDescription.json}/> 
-                  {/* TODO: clean this content parameter up */}
-                </>
+          <>
+            {cardContentEntries.items.map(( cardContent ) => (
+              <div key={cardContent.cardTitle} className={`${styles.descriptionContainer} bg-brightGreen ${cardImage ? '' : 'h-full'}`}>
+                <p className={`${styles.descriptionTitle}`}>{cardContent.cardTitle}</p>
+                <RichText content={cardContent.cardDescription.json}/> 
+                {/* TODO: clean this content parameter up */}
+              </div>
               )
-            })}
-          </div>
+            )}
+          </>
         )
       case 'mediumGreen': 
         return (
-          <div className={`${styles.descriptionContainer} bg-mediumGreen ${cardImage ? '' : 'h-full'}`}>
-            {cardContentEntries.items.map(( cardContent ) => {
-              return (
-                <>
-                  <p className={`${styles.descriptionTitle}`}>{cardContent.cardTitle}</p>
-                  <RichText content={cardContent.cardDescription.json}/> 
-                  {/* TODO: clean this content parameter up */}
-                </>
+          <>
+            {cardContentEntries.items.map(( cardContent ) => (
+              <div key={cardContent.cardTitle} className={`${styles.descriptionContainer} bg-mediumGreen ${cardImage ? '' : 'h-full'}`}>
+                <p className={`${styles.descriptionTitle}`}>{cardContent.cardTitle}</p>
+                <RichText content={cardContent.cardDescription.json}/> 
+                {/* TODO: clean this content parameter up */}
+              </div>
               )
-            })}
-          </div>
+            )}
+          </>
         )
       case 'darkGreen': 
         return (
-          <div className={`${styles.descriptionContainer} bg-darkGreen ${cardImage ? '' : 'h-full'}`}>
-            {cardContentEntries.items.map(( cardContent ) => {
-              return (
-                <>
-                  <p className={`${styles.descriptionTitle}`}>{cardContent.cardTitle}</p>
-                  <RichText content={cardContent.cardDescription.json}/> 
-                  {/* TODO: clean this content parameter up */}
-                </>
+          <>
+            {cardContentEntries.items.map(( cardContent ) => (
+              <div key={cardContent.cardTitle} className={`${styles.descriptionContainer} bg-darkGreen ${cardImage ? '' : 'h-full'}`}>
+                <p className={`${styles.descriptionTitle}`}>{cardContent.cardTitle}</p>
+                <RichText content={cardContent.cardDescription.json}/> 
+                {/* TODO: clean this content parameter up */}
+              </div>
               )
-            })}
-          </div>
+            )}
+          </>
         )
       default:
         break;
@@ -79,7 +76,8 @@ export const Card = ({ card }: Props) => {
         </div>
       )}
 
-      {renderCardDescription(cardColor)}
+      {renderCardDescription(cardColor)} 
+      {/** Tailwind doesn't allow for dynamic values to be used in classes so this function is a temp solution to use values passed in from contentful */}
     </div>
   )
 }

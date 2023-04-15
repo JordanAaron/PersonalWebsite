@@ -24,7 +24,6 @@ type Props = {
 }
 
 export const SiteIntroSection = ({ title, profile, contactIcons, card }: Props) => {
-  console.log(card)
   return (
     <section className={styles.container}>
       <div className={styles.introContentLayout}>
