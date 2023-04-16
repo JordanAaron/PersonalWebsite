@@ -1,12 +1,12 @@
-import React, { ReactNode } from 'react'
-import Meta from './meta'
+import React, { type ReactNode } from 'react'
+import { Meta } from './meta'
 
-type Props = {
+interface Props {
   preview: boolean
   children: ReactNode
 }
 
-export default function Layout({ preview, children }: Props) {
+export const Layout = ({ preview, children }: Props): JSX.Element => {
   return (
     <>
       <Meta />

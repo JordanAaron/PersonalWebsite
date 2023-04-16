@@ -1,24 +1,22 @@
-import React from "react"
+import React from 'react'
 
-import { CardType } from "../../types/components"
-import { Card } from "../Card/card"
+import type { CardType } from '../../types/components'
+import { Card } from '../Card/card'
 
 import styles from './skillsSection.module.css'
 
-type Props = {
+interface Props {
   sectionTitle: string
   skills: CardType[]
 }
 
-export const SkillsSection = ({ sectionTitle, skills }: Props) => {
-  return(
+export const SkillsSection = ({ sectionTitle, skills }: Props): JSX.Element => {
+  return (
     <section className={styles.container}>
       <p className="text-darkGreen text-2xl font-semibold my-8">{sectionTitle}</p>
-      <div className={styles.skillCardsContainer} >
+      <div className={styles.skillCardsContainer}>
         {skills.map((skillCard: CardType) => {
-          return(
-            <Card key={skillCard.entryTitle} card={skillCard}/>
-          )
+          return <Card key={skillCard.entryTitle} card={skillCard} />
         })}
       </div>
     </section>

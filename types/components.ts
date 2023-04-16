@@ -1,18 +1,23 @@
-import { Document } from "@contentful/rich-text-types"
+import type { Document } from '@contentful/rich-text-types'
 
-type Image = {
+interface Image {
   description: string
   url: string
 }
 
-type CardContent = {
+export interface Icon {
+  entryTitle: string
+  iconImage: Image
+}
+
+export interface CardContent {
   cardTitle: string
   cardDescription: {
     json: Document
   }
 }
 
-export type CardType = {
+export interface CardType {
   entryTitle: string
   cardImage?: Image
   cardContentEntriesCollection: {
@@ -21,7 +26,7 @@ export type CardType = {
   cardColor: string
 }
 
-export type Job = {
+export interface Job {
   companyName: string
   companyLogo: {
     description: string

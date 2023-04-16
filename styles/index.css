@@ -4,7 +4,8 @@
 /* purgecss end ignore */
 @tailwind utilities;
 
-html, body {
+html,
+body {
   font-family: 'Montserrat', sans-serif;
   background-color: theme(colors[grey]);
 }

@@ -1,9 +1,9 @@
-import React, { ReactNode } from "react"
+import React, { type ReactNode } from 'react'
 
-type Props = {
+interface Props {
   children: ReactNode
 }
 
-export default function Container({ children }: Props) {
+export const Container = ({ children }: Props): JSX.Element => {
   return <div className="container mx-auto px-5">{children}</div>
 }

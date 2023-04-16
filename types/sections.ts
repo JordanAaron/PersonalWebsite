@@ -1,42 +1,46 @@
-import { CardType } from "./components"
-import { Document } from '@contentful/rich-text-types'
+import type { CardType } from './components'
+import type { Document } from '@contentful/rich-text-types'
 
-export type SiteIntroSectionType = {
-  siteIntroTitle: string,
-    profileDescription: string,
-    contactIconsCollection: {
-      items: [{
-        entryTitle: string,
+export interface SiteIntroSectionType {
+  siteIntroTitle: string
+  profileDescription: string
+  contactIconsCollection: {
+    items: [
+      {
+        entryTitle: string
         iconImage: {
-          description: string,
+          description: string
           url: string
         }
-      }]
-    },
-    profileCard: CardType
+      }
+    ]
+  }
+  profileCard: CardType
 }
 
-export type WorkExperienceSectionType = {
+export interface WorkExperienceSectionType {
   entryTitle: string
   jobsCollection: {
-    items: [{
-      companyName: string
-      companyLogo: {
-        description: string
-        url: string
+    items: [
+      {
+        companyName: string
+        companyLogo: {
+          description: string
+          url: string
+        }
+        date: string
+        jobTitle: string
+        jobDescription: string
+        description: {
+          json: Document
+        }
+        imageOnLeft: boolean
       }
-      date: string
-      jobTitle: string
-      jobDescription: string
-      description: {
-        json: Document
-      }
-      imageOnLeft: boolean
-    }]
+    ]
   }
 }
 
-export type SkillsSectionType = {
+export interface SkillsSectionType {
   entryTitle: string
   sectionTitle: string
   skillCardsCollection: {

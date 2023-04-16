@@ -8,7 +8,7 @@ if (!CONTENTFUL_SPACE_ID || !CONTENTFUL_MANAGEMENT_TOKEN) {
     [
       'Parameters missing...',
       'Please run the setup command as follows',
-      'CONTENTFUL_SPACE_ID=XXX CONTENTFUL_MANAGEMENT_TOKEN=CFPAT-XXX npm run setup',
+      'CONTENTFUL_SPACE_ID=XXX CONTENTFUL_MANAGEMENT_TOKEN=CFPAT-XXX npm run setup'
     ].join('\n')
   )
 }
@@ -16,7 +16,7 @@ if (!CONTENTFUL_SPACE_ID || !CONTENTFUL_MANAGEMENT_TOKEN) {
 spaceImport({
   spaceId: CONTENTFUL_SPACE_ID,
   managementToken: CONTENTFUL_MANAGEMENT_TOKEN,
-  content: exportFile,
+  content: exportFile
 })
   .then(() => console.log('The content model of your space is set up!'))
   .catch((e) => console.error(e))

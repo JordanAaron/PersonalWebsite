@@ -1,3 +1,5 @@
+// TODO: Look at all files in pages/api and decide whether they are needed
+
 export default async function exit(_, res) {
   // Exit the current user from "Preview Mode". This function accepts no args.
   res.clearPreviewData()

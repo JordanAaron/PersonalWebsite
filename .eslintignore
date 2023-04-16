@@ -1,0 +1,6 @@
+# .eslintrc.js
+# next.config.js
+# contentful/setup.js
+next-env.d.ts
+
+**/*.js

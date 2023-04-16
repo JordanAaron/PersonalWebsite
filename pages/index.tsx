@@ -1,28 +1,38 @@
 import React from 'react'
 import Head from 'next/head'
 
-import Container from '../components/container'
-import Layout from '../components/layout'
+import { Container } from '../components/container'
+import { Layout } from '../components/layout'
 import { SiteIntroSection } from '../components/SiteIntroSection/siteIntroSection'
 import { SkillsSection } from '../components/SkillsSection/skillsSection'
 import { WorkExperienceSection } from '../components/WorkExperienceSection/workExperienceSection'
-import { SiteIntroSectionType, SkillsSectionType, WorkExperienceSectionType } from '../types/sections'
+import type {
+  SiteIntroSectionType,
+  SkillsSectionType,
+  WorkExperienceSectionType
+} from '../types/sections'
 
 import { getAboutMeSection, getSkillsSection, getWorkExperienceSection } from '../lib/api'
 import { CMS_NAME } from '../lib/constants'
+import type { GetStaticProps } from 'next'
 
 interface Props {
-  preview: boolean,
+  preview: boolean
   aboutMeSection: SiteIntroSectionType
   workExperienceSection: WorkExperienceSectionType
   skillsSection: SkillsSectionType
 }
 
-export default function Index({ preview, aboutMeSection, workExperienceSection, skillsSection }: Props) {
-  const { 
-    siteIntroTitle: title, 
-    profileDescription: profile, 
-    contactIconsCollection: contactIcons, 
+export default function Index({
+  preview,
+  aboutMeSection,
+  workExperienceSection,
+  skillsSection
+}: Props): JSX.Element {
+  const {
+    siteIntroTitle: title,
+    profileDescription: profile,
+    contactIconsCollection: contactIcons,
     profileCard
   } = aboutMeSection
 
@@ -31,28 +41,31 @@ export default function Index({ preview, aboutMeSection, workExperienceSection, 
       <Layout preview={preview}>
         <Head>
           <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
-        </Head> 
+        </Head>
         <Container>
-          <SiteIntroSection 
+          <SiteIntroSection
             title={title}
             profile={profile}
             contactIcons={contactIcons.items}
             card={profileCard}
           />
-          <SkillsSection sectionTitle={skillsSection.sectionTitle} skills={skillsSection.skillCardsCollection.items} />
-          <WorkExperienceSection jobs={workExperienceSection.jobsCollection.items}/>
+          <SkillsSection
+            sectionTitle={skillsSection.sectionTitle}
+            skills={skillsSection.skillCardsCollection.items}
+          />
+          <WorkExperienceSection jobs={workExperienceSection.jobsCollection.items} />
         </Container>
       </Layout>
     </>
   )
 }
 
-export async function getStaticProps({ preview = false }) {
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const aboutMeSection = await getAboutMeSection()
   const workExperienceSection = await getWorkExperienceSection()
   const skillsSection = await getSkillsSection()
 
   return {
-    props: { preview, aboutMeSection, workExperienceSection, skillsSection },
+    props: { preview, aboutMeSection, workExperienceSection, skillsSection }
   }
 }

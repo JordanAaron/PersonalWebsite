@@ -1,4 +1,4 @@
-.container{
+.container {
   min-width: 15rem;
   max-width: 20rem;
   margin: 2rem auto;
@@ -11,7 +11,7 @@
 }
 
 .descriptionContainer {
-  color: #EAF4F2;
+  color: #eaf4f2;
   padding: 1.75rem;
   box-shadow: 3px 4px 4px #0000001a;
 }
