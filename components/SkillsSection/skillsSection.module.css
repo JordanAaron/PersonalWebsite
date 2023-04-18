@@ -12,8 +12,8 @@
 
 @media (min-width: theme(screens[laptop])) {
   .skillCardsContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 2rem;
+    max-width: 70rem;
+    margin: 0 auto;
   }
 }

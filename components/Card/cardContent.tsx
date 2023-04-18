@@ -46,7 +46,8 @@ export const CardContent = ({ cardColor, cardContentEntries, cardImage }: Props)
                   className={`
                     ${styles.descriptionContainer}  
                     ${cardConfig[`${cardColor}` as keyof CardConfig].color} 
-                    ${cardImage ? 'h-60' : 'h-full'}`}>
+                    ${cardImage ? 'h-60' : 'h-full'}
+                    py-2 px-12`}>
                   <div
                     style={{
                       display: 'grid',
@@ -66,7 +67,8 @@ export const CardContent = ({ cardColor, cardContentEntries, cardImage }: Props)
           className={`
             ${styles.descriptionContainer} 
             ${cardConfig[`${cardColor}` as keyof CardConfig].color} 
-            ${cardImage ? '' : 'h-full'}`}>
+            ${cardImage ? '' : 'h-full'}
+            p-4`}>
           <p className={`${styles.descriptionTitle}`}>{cardContentEntries[0].cardTitle}</p>
           <RichText content={cardContentEntries[0].cardDescription.json} />
         </div>
