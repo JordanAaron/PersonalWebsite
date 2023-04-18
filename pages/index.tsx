@@ -55,18 +55,6 @@ export default function Index({
             skills={skillsSection.skillCardsCollection.items}
           />
           <WorkExperienceSection jobs={workExperienceSection.jobsCollection.items} />
-
-          <Carousel indicators={false} interval={null}>
-            <Carousel.Item>
-              <div style={{ textAlign: 'center' }}>Item 1</div>
-            </Carousel.Item>
-            <Carousel.Item>
-              <h3 style={{ textAlign: 'center' }}>Item 2</h3>
-            </Carousel.Item>
-            <Carousel.Item>
-              <h3 style={{ textAlign: 'center' }}>Item 3</h3>
-            </Carousel.Item>
-          </Carousel>
         </Container>
       </Layout>
     </>
