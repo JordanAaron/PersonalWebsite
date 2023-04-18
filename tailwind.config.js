@@ -9,6 +9,14 @@ module.exports = {
         laptop: '1024px',
         desktop: '1280px'
       },
+      container: {
+        padding: {
+          DEFAULT: '0.5rem',
+          sm: '1rem',
+          lg: '2rem',
+          xl: '4rem'
+        }
+      },
       colors: {
         darkRed: '#8a394a',
         mediumRed: '#ae2e49',
