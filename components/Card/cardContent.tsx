@@ -1,6 +1,7 @@
-// Tailwind doesn't allow for dynamic values to be used in classes so this function is a temp solution to use values passed in from contentful
+// Tailwind doesn't allow for dynamic values to be used in classes so I've created a CardConfig to hold the colors as an alternative
 
 import React from 'react'
+import Carousel from 'react-bootstrap/Carousel'
 
 import type { CardContent as CardContentType } from '../../types/components'
 
@@ -9,69 +10,67 @@ import { RichText } from '../RichText/richText'
 
 interface Props {
   cardColor: string
-  cardContentEntries: {
-    items: CardContentType[]
-  }
+  cardContentEntries: CardContentType[]
   cardImage: boolean
 }
 
+interface CardConfig {
+  brightGreen: { color: string }
+  mediumGreen: { color: string }
+  darkGreen: { color: string }
+}
+
+const cardConfig: CardConfig = {
+  brightGreen: {
+    color: 'bg-brightGreen'
+  },
+  mediumGreen: {
+    color: 'bg-mediumGreen'
+  },
+  darkGreen: {
+    color: 'bg-darkGreen'
+  }
+}
+
 export const CardContent = ({ cardColor, cardContentEntries, cardImage }: Props): JSX.Element => {
-  switch (cardColor) {
-    case 'brightGreen':
-      return (
-        <>
-          {cardContentEntries.items.map((cardContent): JSX.Element => {
+  const hasMultipleEntries = cardContentEntries.length > 1
+
+  return (
+    <>
+      {hasMultipleEntries ? (
+        <Carousel indicators={false} interval={null}>
+          {cardContentEntries.map((cardContent: CardContentType) => {
             return (
-              <div
-                key={cardContent.cardTitle}
-                className={`${styles.descriptionContainer} bg-brightGreen ${
-                  cardImage ? '' : 'h-full'
-                }`}>
-                <p className={`${styles.descriptionTitle}`}>{cardContent.cardTitle}</p>
-                <RichText content={cardContent.cardDescription.json} />
-                {/* TODO: clean this content parameter up */}
-              </div>
+              <Carousel.Item key={cardContent.cardTitle}>
+                <div
+                  className={`
+                    ${styles.descriptionContainer}  
+                    ${cardConfig[`${cardColor}` as keyof CardConfig].color} 
+                    ${cardImage ? 'h-60' : 'h-full'}`}>
+                  <div
+                    style={{
+                      display: 'grid',
+                      justifyItems: 'center'
+                    }}>
+                    <p className={`${styles.descriptionTitle}`}>{cardContent.cardTitle}</p>
+                    <RichText content={cardContent.cardDescription.json} />
+                  </div>
+                </div>
+              </Carousel.Item>
             )
           })}
-        </>
-      )
-    case 'mediumGreen':
-      return (
-        <>
-          {cardContentEntries.items.map(
-            (cardContent): JSX.Element => (
-              <div
-                key={cardContent.cardTitle}
-                className={`${styles.descriptionContainer} bg-mediumGreen ${
-                  cardImage ? '' : 'h-full'
-                }`}>
-                <p className={`${styles.descriptionTitle}`}>{cardContent.cardTitle}</p>
-                <RichText content={cardContent.cardDescription.json} />
-                {/* TODO: clean this content parameter up */}
-              </div>
-            )
-          )}
-        </>
-      )
-    case 'darkGreen':
-      return (
-        <>
-          {cardContentEntries.items.map(
-            (cardContent): JSX.Element => (
-              <div
-                key={cardContent.cardTitle}
-                className={`${styles.descriptionContainer} bg-darkGreen ${
-                  cardImage ? '' : 'h-full'
-                }`}>
-                <p className={`${styles.descriptionTitle}`}>{cardContent.cardTitle}</p>
-                <RichText content={cardContent.cardDescription.json} />
-                {/* TODO: clean this content parameter up */}
-              </div>
-            )
-          )}
-        </>
-      )
-    default:
-      throw new Error("Color doesn't exist")
-  }
+        </Carousel>
+      ) : (
+        <div
+          key={cardContentEntries[0].cardTitle}
+          className={`
+            ${styles.descriptionContainer} 
+            ${cardConfig[`${cardColor}` as keyof CardConfig].color} 
+            ${cardImage ? '' : 'h-full'}`}>
+          <p className={`${styles.descriptionTitle}`}>{cardContentEntries[0].cardTitle}</p>
+          <RichText content={cardContentEntries[0].cardDescription.json} />
+        </div>
+      )}
+    </>
+  )
 }

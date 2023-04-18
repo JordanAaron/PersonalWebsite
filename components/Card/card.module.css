@@ -12,12 +12,12 @@
 
 .descriptionContainer {
   color: #eaf4f2;
-  padding: 1.75rem;
+  padding: 0.5rem 3rem;
   box-shadow: 3px 4px 4px #0000001a;
 }
 
 .descriptionTitle {
-  margin-bottom: 1rem;
+  /* margin: 1rem 0; */
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.5rem;
   font-weight: 500;

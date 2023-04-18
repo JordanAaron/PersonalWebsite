@@ -27,10 +27,9 @@ export const Card = ({ card }: Props): JSX.Element => {
           />
         </div>
       )}
-
       <CardContent
         cardColor={cardColor}
-        cardContentEntries={cardContentEntries}
+        cardContentEntries={cardContentEntries.items}
         cardImage={cardImage !== undefined}
       />
     </div>
