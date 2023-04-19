@@ -8,7 +8,8 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'standard-with-typescript',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
+    'next/core-web-vitals'
   ],
   overrides: [],
   parser: '@typescript-eslint/parser',
@@ -19,6 +20,12 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    'react/react-in-jsx-scope': 'off'
+    'react/react-in-jsx-scope': 'off',
+    'prettier/prettier': ['warn', { endOfLine: 'auto' }]
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
 }
