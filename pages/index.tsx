@@ -30,12 +30,7 @@ export default function Index({
   workExperienceSection,
   skillsSection
 }: Props): JSX.Element {
-  const {
-    siteIntroTitle: title,
-    profileDescription: profile,
-    contactIconsCollection: contactIcons,
-    profileCard
-  } = aboutMeSection
+  const { siteIntroTitle: title, profileDescription: profile, profileCard } = aboutMeSection
 
   return (
     <>
@@ -44,12 +39,7 @@ export default function Index({
           <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
         </Head>
         <Container>
-          <SiteIntroSection
-            title={title}
-            profile={profile}
-            contactIcons={contactIcons.items}
-            card={profileCard}
-          />
+          <SiteIntroSection title={title} profile={profile} card={profileCard} />
           <SkillsSection
             sectionTitle={skillsSection.sectionTitle}
             skills={skillsSection.skillCardsCollection.items}

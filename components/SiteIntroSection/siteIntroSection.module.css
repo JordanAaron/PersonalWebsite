@@ -7,6 +7,11 @@
   grid-template-columns: 3fr 1fr;
 }
 
+.icons {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (min-width: theme(screens[tablet])) {
   .container {
     padding: 10rem 0;
@@ -25,6 +30,6 @@
   }
 
   .icons {
-    display: flex;
+    flex-direction: row;
   }
 }

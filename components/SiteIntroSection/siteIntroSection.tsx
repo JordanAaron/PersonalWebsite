@@ -1,5 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import EmailIcon from '@mui/icons-material/Email'
 
 import { Card } from '../Card/card'
 import type { CardType, Icon } from '../../types/components'
@@ -9,11 +12,10 @@ import styles from './siteIntroSection.module.css'
 interface Props {
   title: string
   profile: string
-  contactIcons: Icon[]
   card: CardType
 }
 
-export const SiteIntroSection = ({ title, profile, contactIcons, card }: Props): JSX.Element => {
+export const SiteIntroSection = ({ title, profile, card }: Props): JSX.Element => {
   return (
     <section className={styles.container}>
       <div className={styles.introContentLayout}>
@@ -23,23 +25,10 @@ export const SiteIntroSection = ({ title, profile, contactIcons, card }: Props):
             <p>{profile}</p>
           </div>
         </div>
-        <div className={`${styles.icons} justify-self-end my-auto`}>
-          {contactIcons.map((icon: Icon) => {
-            const {
-              entryTitle,
-              iconImage: { description, url }
-            } = icon
-            return (
-              <div key={entryTitle} style={{ position: 'relative', width: '50px', height: '50px' }}>
-                <Image
-                  src={url}
-                  alt={description}
-                  fill
-                  // TODO: https://nextjs.org/docs/api-reference/next/image#sizes
-                />
-              </div>
-            )
-          })}
+        <div className={`${styles.icons} my-auto justify-self-end	`}>
+          <GitHubIcon className="w-14 h-14 text-darkGreen" />
+          <LinkedInIcon className="w-14 h-14 text-darkGreen" />
+          <EmailIcon className="w-14 h-14 text-darkGreen" />
         </div>
       </div>
       <div className={styles.card}>
