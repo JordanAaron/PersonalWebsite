@@ -14,3 +14,29 @@
 .jobDetails {
   margin: auto;
 }
+
+.jobDescription {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+@media (min-width: theme(screens[tablet])) {
+  .jobDescriptionContainer {
+    grid-template-columns: 1fr 3fr;
+    column-gap: 2rem;
+  }
+
+  .jobImage {
+    grid-row-start: 1;
+    grid-row-end: 4;
+  }
+
+  .jobDetails {
+    margin: initial;
+  }
+
+  .jobDescription {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+}

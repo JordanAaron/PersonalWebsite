@@ -18,7 +18,7 @@ export const Card = ({ card }: Props): JSX.Element => {
   return (
     <div
       className={`
-      ${cardImage !== undefined ? '!max-w-md' : 'w-full h-60 lg:h-72'}
+      ${cardImage !== undefined ? 'lg:!max-w-md' : 'w-full h-60 lg:h-72'}
         ${styles.container} 
       `}>
       {cardImage !== undefined && (
