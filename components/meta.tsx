@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { HOME_OG_IMAGE_URL } from '../lib/constants'
 
 export const Meta = (): JSX.Element => {
   return (
@@ -15,7 +14,7 @@ export const Meta = (): JSX.Element => {
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta name="description" content={`A frontend developer.`} />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <meta property="og:image" content="*.vercel.app/api/og" />
     </Head>
   )
 }
