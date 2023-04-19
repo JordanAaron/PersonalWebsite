@@ -20,7 +20,8 @@ export const Card = ({ card }: Props): JSX.Element => {
       className={`
       ${cardImage !== undefined ? 'lg:!max-w-md' : 'w-full h-60 lg:h-72'}
         ${styles.container} 
-      `}>
+      `}
+    >
       {cardImage !== undefined && (
         <div className={`${styles.imageContainer}`}>
           <Image

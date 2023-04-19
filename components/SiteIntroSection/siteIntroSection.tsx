@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import EmailIcon from '@mui/icons-material/Email'
@@ -26,13 +25,13 @@ export const SiteIntroSection = ({ title, profile, card }: Props): JSX.Element =
           </div>
         </div>
         <div className={`${styles.icons} my-auto justify-self-end	`}>
-          <a href="https://github.com/JordanAaron" target="_blank">
+          <a href="https://github.com/JordanAaron" target="_blank" rel="noreferrer">
             <GitHubIcon className="w-14 h-14 text-mediumGreen" />
           </a>
-          <a href="https://www.linkedin.com/in/jordanquartey" target="_blank">
+          <a href="https://www.linkedin.com/in/jordanquartey" target="_blank" rel="noreferrer">
             <LinkedInIcon className="w-14 h-14 text-mediumGreen" />
           </a>
-          <a href="mailto:jaquartey@hotmail.com">
+          <a href="mailto:jaquartey@hotmail.com" rel="noreferrer">
             <EmailIcon className="w-14 h-14 text-mediumGreen" />
           </a>
         </div>
