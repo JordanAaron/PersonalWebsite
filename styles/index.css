@@ -7,5 +7,10 @@
 html,
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: theme(colors[grey]);
+  background: linear-gradient(0deg, rgba(82, 80, 80, 0.85), rgba(82, 80, 80, 0.85)),
+    url(../assets/_background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }

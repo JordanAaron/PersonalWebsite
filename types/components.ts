@@ -5,11 +5,6 @@ interface Image {
   url: string
 }
 
-export interface Icon {
-  entryTitle: string
-  iconImage: Image
-}
-
 export interface CardContent {
   cardTitle: string
   cardDescription: {

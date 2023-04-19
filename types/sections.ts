@@ -4,17 +4,6 @@ import type { Document } from '@contentful/rich-text-types'
 export interface SiteIntroSectionType {
   siteIntroTitle: string
   profileDescription: string
-  contactIconsCollection: {
-    items: [
-      {
-        entryTitle: string
-        iconImage: {
-          description: string
-          url: string
-        }
-      }
-    ]
-  }
   profileCard: CardType
 }
 

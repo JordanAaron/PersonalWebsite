@@ -1,6 +1,5 @@
 import React from 'react'
 import Head from 'next/head'
-import { Carousel } from 'react-bootstrap'
 
 import { Container } from '../components/container'
 import { Layout } from '../components/layout'

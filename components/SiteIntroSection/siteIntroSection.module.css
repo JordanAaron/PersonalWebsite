@@ -31,5 +31,6 @@
 
   .icons {
     flex-direction: row;
+    justify-content: end;
   }
 }

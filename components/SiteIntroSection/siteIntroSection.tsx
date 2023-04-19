@@ -5,7 +5,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import EmailIcon from '@mui/icons-material/Email'
 
 import { Card } from '../Card/card'
-import type { CardType, Icon } from '../../types/components'
+import type { CardType } from '../../types/components'
 
 import styles from './siteIntroSection.module.css'
 
@@ -26,9 +26,15 @@ export const SiteIntroSection = ({ title, profile, card }: Props): JSX.Element =
           </div>
         </div>
         <div className={`${styles.icons} my-auto justify-self-end	`}>
-          <GitHubIcon className="w-14 h-14 text-darkGreen" />
-          <LinkedInIcon className="w-14 h-14 text-darkGreen" />
-          <EmailIcon className="w-14 h-14 text-darkGreen" />
+          <a href="https://github.com/JordanAaron" target="_blank">
+            <GitHubIcon className="w-14 h-14 text-mediumGreen" />
+          </a>
+          <a href="https://www.linkedin.com/in/jordanquartey" target="_blank">
+            <LinkedInIcon className="w-14 h-14 text-mediumGreen" />
+          </a>
+          <a href="mailto:jaquartey@hotmail.com">
+            <EmailIcon className="w-14 h-14 text-mediumGreen" />
+          </a>
         </div>
       </div>
       <div className={styles.card}>
