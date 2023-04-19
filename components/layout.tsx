@@ -11,10 +11,8 @@ export const Layout = ({ preview, children }: Props): JSX.Element => {
     <>
       <Meta />
       <div className="min-h-screen">
-        {/* //TODO: Nav */}
         <main>{children}</main>
       </div>
-      {/* //TODO: Footer */}
     </>
   )
 }

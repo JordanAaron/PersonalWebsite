@@ -35,7 +35,7 @@ export default function Index({
     <>
       <Layout preview={preview}>
         <Head>
-          <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
+          <title>{`Jordan Quartey`}</title>
         </Head>
         <Container>
           <SiteIntroSection title={title} profile={profile} card={profileCard} />
