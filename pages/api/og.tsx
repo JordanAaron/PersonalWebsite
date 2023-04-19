@@ -1,7 +1,11 @@
 import { ImageResponse } from '@vercel/og'
 
 export const config = {
-  runtime: 'experimental-edge'
+  runtime: 'experimental-edge',
+  unstable_allowDynamic: [
+    '/node_modules/core-js/**',
+    '/node_modules/next/dist/esm/shared/lib/router/utils/relativize-url.js'
+  ] // Added this following : https://nextjs.org/docs/messages/edge-dynamic-code-evaluation
 }
 
 export default function (): ImageResponse {
