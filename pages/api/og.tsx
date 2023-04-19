@@ -4,7 +4,7 @@ export const config = {
   runtime: 'experimental-edge'
 }
 
-export default function () {
+export default function (): ImageResponse {
   return new ImageResponse(
     (
       <div
