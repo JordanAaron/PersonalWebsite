@@ -13,7 +13,6 @@ import type {
 } from '../types/sections'
 
 import { getAboutMeSection, getSkillsSection, getWorkExperienceSection } from '../lib/api'
-import { CMS_NAME } from '../lib/constants'
 import type { GetStaticProps } from 'next'
 
 interface Props {
