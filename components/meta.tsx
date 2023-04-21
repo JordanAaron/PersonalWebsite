@@ -17,7 +17,7 @@ export const Meta = (): JSX.Element => {
       <meta
         property="og:image"
         // content="https://personal-website-git-dev-jordanaaron.vercel.app/api/og"
-        content="*.vercel.app/api/og"
+        content="https://*.vercel.app/api/og"
       />
     </Head>
   )
