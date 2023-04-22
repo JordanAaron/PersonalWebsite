@@ -35,6 +35,10 @@ export default function Index({
       <Layout preview={preview}>
         <Head>
           <title>{`Jordan Quartey`}</title>
+          <meta
+            property="og:image"
+            content="https://personal-website-jordanaaron.vercel.app/api/og"
+          />
         </Head>
         <Container>
           <SiteIntroSection title={title} profile={profile} card={profileCard} />
