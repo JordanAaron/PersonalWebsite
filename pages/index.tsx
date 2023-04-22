@@ -35,7 +35,7 @@ export default function Index({
       <Layout preview={preview}>
         <Head>
           <title>{`Jordan Quartey`}</title>
-          <meta property="og:image" content="https://jordanquartey.com/api/og" />
+          <meta property="og:image" content="https://jordanquartey.com/api/og?title=Jordan" />
         </Head>
         <Container>
           <SiteIntroSection title={title} profile={profile} card={profileCard} />
