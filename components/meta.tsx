@@ -14,11 +14,7 @@ export const Meta = (): JSX.Element => {
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta name="description" content={`A frontend developer.`} />
-      <meta
-        property="og:image"
-        // content="https://personal-website-git-dev-jordanaaron.vercel.app/api/og"
-        content="https://*.vercel.app/api/og"
-      />
+      <meta property="og:image" content="https://personal-website-jordanaaron.vercel.app/api/og" />
     </Head>
   )
 }
