@@ -13,7 +13,6 @@ import type {
 } from '../types/sections'
 
 import { getAboutMeSection, getSkillsSection, getWorkExperienceSection } from '../lib/api'
-import { CMS_NAME } from '../lib/constants'
 import type { GetStaticProps } from 'next'
 
 interface Props {
@@ -35,7 +34,7 @@ export default function Index({
     <>
       <Layout preview={preview}>
         <Head>
-          <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
+          <title>{`Jordan Quartey`}</title>
         </Head>
         <Container>
           <SiteIntroSection title={title} profile={profile} card={profileCard} />
