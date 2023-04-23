@@ -2,7 +2,7 @@ import { ImageResponse } from '@vercel/og'
 import { NextRequest } from 'next/server'
 
 export const config = {
-  runtime: 'experimental-edge',
+  runtime: 'nodejs', // TODO: change back to edge when a fix for edge has been added to a stable version of next
   unstable_allowDynamic: [
     '/node_modules/core-js/**',
     '/node_modules/next/dist/esm/shared/lib/router/utils/relativize-url.js'
