@@ -35,7 +35,10 @@ export default function Index({
       <Layout preview={preview}>
         <Head>
           <title>{`Jordan Quartey`}</title>
-          <meta property="og:image" content="https://jordanquartey.com/api/og?title=Jordan" />
+          <meta
+            property="og:image"
+            content="https://www.jordanquartey.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Frbj58jf5igj2%2F633lxUwKQZ5YUBYjKxkJXZ%2F4861d84814257f05782d66c9a0bd02b2%2Fculture-work-day.png&w=1920&q=75"
+          />
         </Head>
         <Container>
           <SiteIntroSection title={title} profile={profile} card={profileCard} />
