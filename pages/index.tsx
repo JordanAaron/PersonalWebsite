@@ -12,7 +12,12 @@ import type {
   WorkExperienceSectionType
 } from '../types/sections'
 
-import { getAboutMeSection, getSkillsSection, getWorkExperienceSection } from '../lib/api'
+import {
+  getAboutMeSection,
+  getOGImage,
+  getSkillsSection,
+  getWorkExperienceSection
+} from '../lib/api'
 import type { GetStaticProps } from 'next'
 
 interface Props {
@@ -20,13 +25,15 @@ interface Props {
   aboutMeSection: SiteIntroSectionType
   workExperienceSection: WorkExperienceSectionType
   skillsSection: SkillsSectionType
+  ogImageUrl: string
 }
 
 export default function Index({
   preview,
   aboutMeSection,
   workExperienceSection,
-  skillsSection
+  skillsSection,
+  ogImageUrl
 }: Props): JSX.Element {
   const { siteIntroTitle: title, profileDescription: profile, profileCard } = aboutMeSection
 
@@ -35,10 +42,7 @@ export default function Index({
       <Layout preview={preview}>
         <Head>
           <title>{`Jordan Quartey`}</title>
-          <meta
-            property="og:image"
-            content="https://www.jordanquartey.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Frbj58jf5igj2%2F633lxUwKQZ5YUBYjKxkJXZ%2F4861d84814257f05782d66c9a0bd02b2%2Fculture-work-day.png&w=1920&q=75"
-          />
+          <meta property="og:image" content={ogImageUrl} />
         </Head>
         <Container>
           <SiteIntroSection title={title} profile={profile} card={profileCard} />
@@ -57,8 +61,9 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const aboutMeSection = await getAboutMeSection()
   const workExperienceSection = await getWorkExperienceSection()
   const skillsSection = await getSkillsSection()
+  const ogImageUrl = await getOGImage(process.env.HOME_OG_IMAGE_ID)
 
   return {
-    props: { preview, aboutMeSection, workExperienceSection, skillsSection }
+    props: { preview, aboutMeSection, workExperienceSection, skillsSection, ogImageUrl }
   }
 }
