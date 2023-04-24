@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+import type { GetStaticProps } from 'next'
 
 import { Container } from '../components/container'
 import { Layout } from '../components/layout'
@@ -14,11 +15,10 @@ import type {
 
 import {
   getAboutMeSection,
-  getOGImage,
+  getOGImageById,
   getSkillsSection,
   getWorkExperienceSection
 } from '../lib/api'
-import type { GetStaticProps } from 'next'
 
 interface Props {
   preview: boolean
@@ -37,14 +37,14 @@ export default function Index({
 }: Props): JSX.Element {
   const { siteIntroTitle: title, profileDescription: profile, profileCard } = aboutMeSection
 
+  const ogImageExists = typeof ogImageUrl === 'string'
+
   return (
     <>
       <Layout preview={preview}>
         <Head>
           <title>{`Jordan Quartey`}</title>
-          {ogImageUrl !== undefined && ogImageUrl !== null && (
-            <meta property="og:image" content={ogImageUrl} />
-          )}
+          {ogImageExists && <meta property="og:image" content={ogImageUrl} />}
         </Head>
         <Container>
           <SiteIntroSection title={title} profile={profile} card={profileCard} />
@@ -63,7 +63,7 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const aboutMeSection = await getAboutMeSection()
   const workExperienceSection = await getWorkExperienceSection()
   const skillsSection = await getSkillsSection()
-  const ogImageUrl = await getOGImage(process.env.HOME_OG_IMAGE_ID)
+  const ogImageUrl = await getOGImageById(process.env.HOME_OG_IMAGE_ID)
 
   return {
     props: { preview, aboutMeSection, workExperienceSection, skillsSection, ogImageUrl }
