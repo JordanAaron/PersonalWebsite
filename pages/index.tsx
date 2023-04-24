@@ -25,7 +25,7 @@ interface Props {
   aboutMeSection: SiteIntroSectionType
   workExperienceSection: WorkExperienceSectionType
   skillsSection: SkillsSectionType
-  ogImageUrl: string
+  ogImageUrl: string | null
 }
 
 export default function Index({
@@ -33,7 +33,7 @@ export default function Index({
   aboutMeSection,
   workExperienceSection,
   skillsSection,
-  ogImageUrl
+  ogImageUrl = null
 }: Props): JSX.Element {
   const { siteIntroTitle: title, profileDescription: profile, profileCard } = aboutMeSection
 
@@ -42,7 +42,9 @@ export default function Index({
       <Layout preview={preview}>
         <Head>
           <title>{`Jordan Quartey`}</title>
-          {ogImageUrl !== undefined && <meta property="og:image" content={ogImageUrl} />}
+          {ogImageUrl !== undefined && ogImageUrl !== null && (
+            <meta property="og:image" content={ogImageUrl} />
+          )}
         </Head>
         <Container>
           <SiteIntroSection title={title} profile={profile} card={profileCard} />
