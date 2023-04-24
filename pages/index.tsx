@@ -61,7 +61,7 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const aboutMeSection = await getAboutMeSection()
   const workExperienceSection = await getWorkExperienceSection()
   const skillsSection = await getSkillsSection()
-  const ogImageUrl = await getOGImageById(process.env.HOME_OG_IMAGE_ID)
+  const ogImageUrl = await getOGImageById(process.env.NEXT_PUBLIC_HOME_OG_IMAGE_ID)
 
   return {
     props: { preview, aboutMeSection, workExperienceSection, skillsSection, ogImageUrl }
