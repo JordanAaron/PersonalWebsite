@@ -42,7 +42,7 @@ export default function Index({
       <Layout preview={preview}>
         <Head>
           <title>{`Jordan Quartey`}</title>
-          <meta property="og:image" content={ogImageUrl} />
+          {ogImageUrl !== undefined && <meta property="og:image" content={ogImageUrl} />}
         </Head>
         <Container>
           <SiteIntroSection title={title} profile={profile} card={profileCard} />
