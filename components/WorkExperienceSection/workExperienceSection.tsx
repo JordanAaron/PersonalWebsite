@@ -23,7 +23,7 @@ export const WorkExperienceSection = ({ jobs }: Props): JSX.Element => {
               {imageOnLeft ? (
                 <>
                   <div className={`${styles.jobImage} relative lg:w-full h-32 lg:h-auto`}>
-                    <Image src={companyLogo.url} alt={companyLogo.description} fill />
+                    <Image src={companyLogo.url} alt={companyLogo.description} fill priority />
                   </div>
                   <div className={`${styles.jobDetails}`}>
                     <p>{jobTitle}</p>
@@ -45,7 +45,7 @@ export const WorkExperienceSection = ({ jobs }: Props): JSX.Element => {
                     <p>{date}</p>
                   </div>
                   <div style={{ position: 'relative', width: '100px', height: '100px' }}>
-                    <Image src={companyLogo.url} alt={companyLogo.description} fill />
+                    <Image src={companyLogo.url} alt={companyLogo.description} fill priority />
                   </div>
                 </>
               )}
