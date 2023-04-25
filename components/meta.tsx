@@ -17,5 +17,3 @@ export const Meta = (): JSX.Element => {
     </Head>
   )
 }
-
-// TODO: get static props

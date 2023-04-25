@@ -10,8 +10,6 @@ interface Props {
   card: CardType
 }
 
-// TODO: Look at tailwind styles for responsiveness
-
 export const Card = ({ card }: Props): JSX.Element => {
   const { cardImage, cardContentEntriesCollection: cardContentEntries, cardColor } = card
 
@@ -27,7 +25,11 @@ export const Card = ({ card }: Props): JSX.Element => {
             src={cardImage?.url}
             alt={cardImage?.description}
             fill
-            // TODO: https://nextjs.org/docs/api-reference/next/image#sizes
+            sizes="
+              (max-width: 540px) 20rem,
+              (max-width: 768px) 25rem,
+            "
+            priority
           />
         </div>
       )}
