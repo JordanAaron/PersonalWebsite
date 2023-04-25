@@ -37,6 +37,7 @@ export const WorkExperienceSection = ({ jobs }: Props): JSX.Element => {
                   </div>
                 </>
               ) : (
+                // TODO: Fix this right side version
                 <>
                   <div className={`${styles.jobDetails} text-brightGreen`}>
                     <p>{jobTitle}</p>
@@ -44,12 +45,7 @@ export const WorkExperienceSection = ({ jobs }: Props): JSX.Element => {
                     <p>{date}</p>
                   </div>
                   <div style={{ position: 'relative', width: '100px', height: '100px' }}>
-                    <Image
-                      src={companyLogo.url}
-                      alt={companyLogo.description}
-                      fill
-                      // TODO: https://nextjs.org/docs/api-reference/next/image#sizes
-                    />
+                    <Image src={companyLogo.url} alt={companyLogo.description} fill />
                   </div>
                 </>
               )}
