@@ -9,6 +9,7 @@ export interface SiteIntroSectionType {
 
 export interface WorkExperienceSectionType {
   entryTitle: string
+  sectionTitle: string
   jobsCollection: {
     items: [
       {
@@ -24,7 +25,7 @@ export interface WorkExperienceSectionType {
           json: Document
         }
         imageOnLeft: boolean
-      }
+      } //TODO: Update this with the Job type in the components types but be vigilant because these types seem to be different
     ]
   }
 }
@@ -35,4 +36,11 @@ export interface SkillsSectionType {
   skillCardsCollection: {
     items: CardType[]
   }
+}
+
+export interface Section
+  extends SiteIntroSectionType,
+    SkillsSectionType,
+    WorkExperienceSectionType {
+  __typename: string
 }

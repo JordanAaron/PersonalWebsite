@@ -7,13 +7,14 @@ import type { Job } from '../../types/components'
 import styles from './workExperienceSection.module.css'
 
 interface Props {
+  sectionTitle: string
   jobs: Job[]
 }
 
-export const WorkExperienceSection = ({ jobs }: Props): JSX.Element => {
+export const WorkExperienceSection = ({ sectionTitle, jobs }: Props): JSX.Element => {
   return (
     <section className={styles.container}>
-      <p className="text-darkGreen text-2xl lg:text-3xl font-semibold">Work Experience</p>
+      <p className="text-darkGreen text-2xl lg:text-3xl font-semibold">{sectionTitle}</p>
       {jobs.map((job: Job) => {
         const { companyName, companyLogo, date, jobTitle, description, imageOnLeft } = job
 
