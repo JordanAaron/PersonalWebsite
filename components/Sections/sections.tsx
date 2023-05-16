@@ -3,9 +3,12 @@ import {
   SkillsSectionType,
   WorkExperienceSectionType
 } from '../../types/sections'
+
 import { SiteIntroSection } from '../SiteIntroSection/siteIntroSection'
 import { SkillsSection } from '../SkillsSection/skillsSection'
 import { WorkExperienceSection } from '../WorkExperienceSection/workExperienceSection'
+
+import styles from './sections.module.css'
 
 interface SectionType extends SiteIntroSectionType, SkillsSectionType, WorkExperienceSectionType {
   __typename: string
@@ -19,7 +22,7 @@ interface Props {
 
 export const Sections = ({ sections }: Props): JSX.Element => {
   return (
-    <>
+    <div className={styles.container}>
       {sections.map((section) => {
         switch (section.__typename) {
           case 'WebsiteIntroSection':
@@ -51,6 +54,6 @@ export const Sections = ({ sections }: Props): JSX.Element => {
             break
         }
       })}
-    </>
+    </div>
   )
 }

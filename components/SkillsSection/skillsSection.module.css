@@ -1,7 +1,3 @@
-.container {
-  padding: 2.5rem 0;
-}
-
 @media (min-width: theme(screens[tablet])) {
   .skillCardsContainer {
     display: grid;

@@ -1,6 +1,7 @@
 import type { Document } from '@contentful/rich-text-types'
+import type { ImageProps } from 'next/image'
 
-interface Image {
+interface Image extends ImageProps {
   description: string
   url: string
 }

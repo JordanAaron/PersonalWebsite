@@ -1,13 +1,12 @@
-.container {
+.containerWithImage {
+  width: 80vw;
+  margin: auto;
+}
+
+.containerNoImage {
   min-width: 15rem;
   max-width: 20rem;
   margin: 2rem auto;
-}
-
-.imageContainer {
-  position: relative;
-  height: 20rem;
-  box-shadow: 3px 4px 4px #0000001a;
 }
 
 .descriptionContainer {
@@ -22,23 +21,24 @@
 }
 
 @media (min-width: theme(screens[surfaceDuo])) {
-  .container {
-    min-width: 20rem;
-    max-width: 25rem;
+  .containerWithImage {
+    width: 70vw;
   }
 
-  .imageContainer {
-    height: 25rem;
+  .containerNoImage {
+    min-width: 20rem;
+    max-width: 25rem;
   }
 }
 
 @media (min-width: theme(screens[tablet])) {
-  .container {
-    margin: 0 auto;
+  .containerWithImage {
+    width: unset;
   }
 
-  .imageContainer {
-    min-width: 22rem;
+  .containerNoImage {
+    min-width: 100%;
+    margin: 0;
   }
 
   .descriptionTitle {
@@ -47,7 +47,7 @@
 }
 
 @media (min-width: theme(screens[laptop])) {
-  .container {
-    max-width: none;
+  .containerWithImage {
+    width: 75%;
   }
 }

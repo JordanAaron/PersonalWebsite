@@ -1,5 +1,7 @@
-.container {
-  padding: 2.5rem 0; /*TODO: Change the method for centering this section*/
+.title {
+  color: theme(colors[darkGreen]);
+  font-size: 1.75rem;
+  font-weight: 600;
 }
 
 .introContentLayout {
@@ -14,10 +16,13 @@
 
 @media (min-width: theme(screens[tablet])) {
   .container {
-    padding: 10rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 2.5rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
   }
 
   .introContentLayout {
@@ -25,12 +30,14 @@
     margin: auto;
   }
 
-  .card {
-    margin: auto;
-  }
-
   .icons {
     flex-direction: row;
     justify-content: end;
+  }
+}
+
+@media (min-width: theme(screens[laptop])) {
+  .title {
+    font-size: 2.75rem;
   }
 }
