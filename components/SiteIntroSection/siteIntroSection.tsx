@@ -26,7 +26,7 @@ export const SiteIntroSection = ({ title, profile, card }: Props): JSX.Element =
         </div>
         <div className={`${styles.iconsContainer} my-auto justify-self-end	`}>
           <a href="https://github.com/JordanAaron" target="_blank" rel="noreferrer">
-            <GitHubIcon className={styles.icon} fontSize="large" />
+            <GitHubIcon className={styles.icon} fontSize="inherit" />
           </a>
           <a href="https://www.linkedin.com/in/jordanquartey" target="_blank" rel="noreferrer">
             <LinkedInIcon className={styles.icon} fontSize="large" />
