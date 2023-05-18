@@ -1,3 +1,15 @@
 .container {
   display: grid;
 }
+
+.sectionWrapper {
+  display: grid;
+  height: 100vh;
+  padding: 1rem;
+}
+
+@media (min-width: theme(screens[tablet])) {
+  .sectionWrapper {
+    align-items: center;
+  }
+}

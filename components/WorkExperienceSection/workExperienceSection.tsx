@@ -13,8 +13,9 @@ interface Props {
 
 export const WorkExperienceSection = ({ sectionTitle, jobs }: Props): JSX.Element => {
   return (
-    <section className={styles.container}>
+    <section>
       <p className="text-darkGreen text-2xl lg:text-3xl font-semibold">{sectionTitle}</p>
+
       {jobs.map((job: Job) => {
         const { companyName, companyLogo, date, jobTitle, description, imageOnLeft } = job
 

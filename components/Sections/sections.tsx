@@ -27,28 +27,31 @@ export const Sections = ({ sections }: Props): JSX.Element => {
         switch (section.__typename) {
           case 'WebsiteIntroSection':
             return (
-              <SiteIntroSection
-                key={section.__typename}
-                title={section.siteIntroTitle}
-                profile={section.profileDescription}
-                card={section.profileCard}
-              />
+              <div key={section.__typename} className={styles.sectionWrapper}>
+                <SiteIntroSection
+                  title={section.siteIntroTitle}
+                  profile={section.profileDescription}
+                  card={section.profileCard}
+                />
+              </div>
             )
           case 'SkillsSection':
             return (
-              <SkillsSection
-                key={section.__typename}
-                sectionTitle={section.sectionTitle}
-                skills={section.skillCardsCollection.items}
-              />
+              <div key={section.__typename} className={styles.sectionWrapper}>
+                <SkillsSection
+                  sectionTitle={section.sectionTitle}
+                  skills={section.skillCardsCollection.items}
+                />
+              </div>
             )
           case 'WorkExperienceSection':
             return (
-              <WorkExperienceSection
-                key={section.__typename}
-                sectionTitle={section.sectionTitle}
-                jobs={section.jobsCollection.items}
-              />
+              <div key={section.__typename} className={styles.sectionWrapper}>
+                <WorkExperienceSection
+                  sectionTitle={section.sectionTitle}
+                  jobs={section.jobsCollection.items}
+                />
+              </div>
             )
           default:
             break

@@ -1,12 +1,12 @@
 .containerWithImage {
-  width: 80vw;
+  width: 80%;
   margin: auto;
 }
 
 .containerNoImage {
   min-width: 15rem;
   max-width: 20rem;
-  margin: 2rem auto;
+  margin: 1rem auto;
 }
 
 .descriptionContainer {
