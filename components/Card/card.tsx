@@ -25,6 +25,7 @@ export const Card = ({ card }: Props): JSX.Element => {
             alt={cardImage?.description}
             width={cardImage?.width}
             height={cardImage?.height}
+            priority
           />
         </div>
       )}
