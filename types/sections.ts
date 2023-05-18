@@ -25,7 +25,7 @@ export interface WorkExperienceSectionType {
           json: Document
         }
         imageOnLeft: boolean
-      } //TODO: Update this with the Job type in the components types but be vigilant because these types seem to be different
+      } // TODO: Update this with the Job type in the components types but be vigilant because these types seem to be different
     ]
   }
 }

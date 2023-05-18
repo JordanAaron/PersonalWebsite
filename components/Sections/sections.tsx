@@ -1,4 +1,4 @@
-import {
+import type {
   SiteIntroSectionType,
   SkillsSectionType,
   WorkExperienceSectionType
@@ -18,7 +18,7 @@ interface Props {
   sections: SectionType[]
 }
 
-//TODO: You need to filter the data you're pulling through into their rightful sections
+// TODO: You need to filter the data you're pulling through into their rightful sections
 
 export const Sections = ({ sections }: Props): JSX.Element => {
   return (
@@ -54,7 +54,7 @@ export const Sections = ({ sections }: Props): JSX.Element => {
               </div>
             )
           default:
-            break
+            return null
         }
       })}
     </div>
