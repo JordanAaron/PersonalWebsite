@@ -24,15 +24,15 @@ export const SiteIntroSection = ({ title, profile, card }: Props): JSX.Element =
             <p>{profile}</p>
           </div>
         </div>
-        <div className={`${styles.icons} my-auto justify-self-end	`}>
+        <div className={`${styles.iconsContainer} my-auto justify-self-end	`}>
           <a href="https://github.com/JordanAaron" target="_blank" rel="noreferrer">
-            <GitHubIcon className="w-14 h-14 text-mediumGreen" />
+            <GitHubIcon className={styles.icon} />
           </a>
           <a href="https://www.linkedin.com/in/jordanquartey" target="_blank" rel="noreferrer">
-            <LinkedInIcon className="w-14 h-14 text-mediumGreen" />
+            <LinkedInIcon className={styles.icon} />
           </a>
           <a href="mailto:jaquartey@hotmail.com" rel="noreferrer">
-            <EmailIcon className="w-14 h-14 text-mediumGreen" />
+            <EmailIcon className={styles.icon} />
           </a>
         </div>
       </div>

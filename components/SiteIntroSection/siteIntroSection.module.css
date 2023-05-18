@@ -9,9 +9,15 @@
   grid-template-columns: 3fr 1fr;
 }
 
-.icons {
+.iconsContainer {
   display: flex;
   flex-direction: column;
+}
+
+.icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  color: theme(colors[mediumGreen]);
 }
 
 @media (min-width: theme(screens[tablet])) {
@@ -30,7 +36,7 @@
     margin: auto;
   }
 
-  .icons {
+  .iconsContainer {
     flex-direction: row;
     justify-content: end;
   }
