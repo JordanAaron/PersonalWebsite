@@ -15,20 +15,16 @@ export const Card = ({ card }: Props): JSX.Element => {
 
   return (
     <div
-      className={`
-      ${cardImage !== undefined ? 'lg:!max-w-md' : 'w-full h-60 lg:h-72'}
-        ${styles.container} 
-      `}>
+      className={`${
+        cardImage !== undefined ? styles.containerWithImage : styles.containerNoImage
+      }`}>
       {cardImage !== undefined && (
-        <div className={`${styles.imageContainer}`}>
+        <div className={styles.imageContainer}>
           <Image
             src={cardImage?.url}
             alt={cardImage?.description}
-            fill
-            sizes="
-              (max-width: 540px) 20rem,
-              (max-width: 768px) 25rem,
-            "
+            width={cardImage?.width}
+            height={cardImage?.height}
             priority
           />
         </div>

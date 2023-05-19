@@ -4,39 +4,18 @@ import type { GetStaticProps } from 'next'
 
 import { Container } from '../components/container'
 import { Layout } from '../components/layout'
-import { SiteIntroSection } from '../components/SiteIntroSection/siteIntroSection'
-import { SkillsSection } from '../components/SkillsSection/skillsSection'
-import { WorkExperienceSection } from '../components/WorkExperienceSection/workExperienceSection'
-import type {
-  SiteIntroSectionType,
-  SkillsSectionType,
-  WorkExperienceSectionType
-} from '../types/sections'
+import { Sections } from '../components/Sections/sections'
+import type { Section } from '../types/sections'
 
-import {
-  getAboutMeSection,
-  getOGImageById,
-  getSkillsSection,
-  getWorkExperienceSection
-} from '../lib/api'
+import { getOGImageById, getPageDataByID } from '../lib/api'
 
 interface Props {
   preview: boolean
-  aboutMeSection: SiteIntroSectionType
-  workExperienceSection: WorkExperienceSectionType
-  skillsSection: SkillsSectionType
   ogImageUrl: string
+  sections: Section[]
 }
 
-export default function Index({
-  preview,
-  aboutMeSection,
-  workExperienceSection,
-  skillsSection,
-  ogImageUrl
-}: Props): JSX.Element {
-  const { siteIntroTitle: title, profileDescription: profile, profileCard } = aboutMeSection
-
+export default function Index({ preview, ogImageUrl, sections }: Props): JSX.Element {
   return (
     <>
       <Layout preview={preview}>
@@ -45,12 +24,7 @@ export default function Index({
           <meta property="og:image" content={ogImageUrl} />
         </Head>
         <Container>
-          <SiteIntroSection title={title} profile={profile} card={profileCard} />
-          <SkillsSection
-            sectionTitle={skillsSection.sectionTitle}
-            skills={skillsSection.skillCardsCollection.items}
-          />
-          <WorkExperienceSection jobs={workExperienceSection.jobsCollection.items} />
+          <Sections sections={sections} />
         </Container>
       </Layout>
     </>
@@ -58,12 +32,14 @@ export default function Index({
 }
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const aboutMeSection = await getAboutMeSection()
-  const workExperienceSection = await getWorkExperienceSection()
-  const skillsSection = await getSkillsSection()
   const ogImageUrl = await getOGImageById(process.env.NEXT_PUBLIC_HOME_OG_IMAGE_ID)
+  const sections = await getPageDataByID(process.env.HOMEPAGE_ID)
 
   return {
-    props: { preview, aboutMeSection, workExperienceSection, skillsSection, ogImageUrl }
+    props: {
+      preview,
+      ogImageUrl,
+      sections
+    }
   }
 }
