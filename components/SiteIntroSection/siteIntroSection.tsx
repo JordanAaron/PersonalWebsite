@@ -29,7 +29,7 @@ export const SiteIntroSection = ({ title, profile, card }: Props): JSX.Element =
             <GitHubIcon className={styles.icon} fontSize="inherit" />
           </a>
           <a href="https://www.linkedin.com/in/jordanquartey" target="_blank" rel="noreferrer">
-            <LinkedInIcon className={styles.icon} fontSize="large" />
+            <LinkedInIcon sx={{ fontSize: 50 }} />
           </a>
           <a href="mailto:jaquartey@hotmail.com" rel="noreferrer">
             <EmailIcon className={styles.icon} fontSize="large" />
