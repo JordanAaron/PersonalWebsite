@@ -20,9 +20,7 @@ export const SiteIntroSection = ({ title, profile, card }: Props): JSX.Element =
       <div className={styles.introContentLayout}>
         <div>
           <p className={styles.title}>{title}</p>
-          <div className={`text-brightGreen text-xl md:text-2xl lg:text-3xl my-4`}>
-            <p>{profile}</p>
-          </div>
+          <p className={styles.description}>{profile}</p>
         </div>
         <div className={`${styles.iconsContainer} my-auto justify-self-end	`}>
           <a href="https://github.com/JordanAaron" target="_blank" rel="noreferrer">

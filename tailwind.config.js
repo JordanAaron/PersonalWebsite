@@ -26,7 +26,12 @@ module.exports = {
         brightGreen: '#59baa9',
         darkerWhite: '#eaf4f2',
         lighterWhite: '#f2f2f2',
-        grey: '#525050'
+        grey: '#525050',
+        vibrantCyan: '#00F2E6',
+        moderateCyan: '#28A6A0',
+        pastelCyan: '#8FC9C5',
+        paleCyan: '#B2DCD9',
+        black: '#000000'
       },
       spacing: {
         28: '7rem'

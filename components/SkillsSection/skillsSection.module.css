@@ -1,4 +1,16 @@
+.sectionTitle {
+  color: theme(colors[vibrantCyan]);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
 @media (min-width: theme(screens[tablet])) {
+  .sectionTitle {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
   .skillCardsContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
