@@ -8,7 +8,7 @@ html,
 body {
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(0deg, rgba(28, 28, 28, 0.85), rgba(28, 28, 28, 0.85)),
-    url(../assets/_background.jpg);
+    url(../assets/_background.webp);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
