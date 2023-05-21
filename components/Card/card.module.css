@@ -1,6 +1,6 @@
 .containerWithImage {
   width: 80%;
-  margin: auto;
+  margin: 1rem auto;
 }
 
 .containerNoImage {
@@ -10,7 +10,7 @@
 }
 
 .descriptionContainer {
-  color: #eaf4f2;
+  color: theme(colors[black]);
   box-shadow: 3px 4px 4px #0000001a;
 }
 

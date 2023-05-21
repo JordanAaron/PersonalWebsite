@@ -13,7 +13,7 @@ interface Props {
 export const SkillsSection = ({ sectionTitle, skills }: Props): JSX.Element => {
   return (
     <section>
-      <p className="text-darkGreen text-2xl md:text-3xl font-semibold">{sectionTitle}</p>
+      <p className={styles.sectionTitle}>{sectionTitle}</p>
       <div className={styles.skillCardsContainer}>
         {skills.map((skillCard: CardType) => {
           return <Card key={skillCard.entryTitle} card={skillCard} />

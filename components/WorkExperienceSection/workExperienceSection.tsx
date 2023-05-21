@@ -14,14 +14,14 @@ interface Props {
 export const WorkExperienceSection = ({ sectionTitle, jobs }: Props): JSX.Element => {
   return (
     <section>
-      <p className="text-darkGreen text-2xl lg:text-3xl font-semibold">{sectionTitle}</p>
+      <p className={styles.sectionTitle}>{sectionTitle}</p>
 
       {jobs.map((job: Job) => {
         const { companyName, companyLogo, date, jobTitle, description, imageOnLeft } = job
 
         return (
           <div key={companyName} className={styles.jobContainer}>
-            <div className={`${styles.jobDescriptionContainer} text-brightGreen`}>
+            <div className={`${styles.jobDescriptionContainer} text-vibrantCyan`}>
               {imageOnLeft ? (
                 <>
                   <div className={`${styles.jobImage} relative lg:w-full h-32 lg:h-auto`}>

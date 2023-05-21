@@ -1,7 +1,13 @@
 .title {
-  color: theme(colors[darkGreen]);
+  color: theme(colors[vibrantCyan]);
   font-size: 1.75rem;
   font-weight: 600;
+}
+
+.description {
+  color: theme(colors[moderateCyan]);
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .introContentLayout {
@@ -15,7 +21,7 @@
 }
 
 .icon {
-  color: theme(colors[mediumGreen]);
+  color: theme(colors[moderateCyan]);
 }
 
 @media (min-width: theme(screens[tablet])) {
@@ -27,6 +33,11 @@
 
   .title {
     font-size: 2.25rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .introContentLayout {
@@ -43,5 +54,10 @@
 @media (min-width: theme(screens[laptop])) {
   .title {
     font-size: 2.75rem;
+  }
+
+  .description {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
