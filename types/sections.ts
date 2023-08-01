@@ -1,5 +1,6 @@
-import type { CardType } from './components'
 import type { Document } from '@contentful/rich-text-types'
+
+import type { CardType } from './components'
 
 export interface SiteIntroSectionType {
   siteIntroTitle: string

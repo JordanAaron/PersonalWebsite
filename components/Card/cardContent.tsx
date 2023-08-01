@@ -1,12 +1,10 @@
 // Tailwind doesn't allow for dynamic values to be used in classes so I've created a CardConfig to hold the colors as an alternative
-
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 
 import type { CardContent as CardContentType } from '../../types/components'
-
-import styles from './card.module.css'
 import { RichText } from '../RichText/richText'
+import styles from './card.module.css'
 
 interface Props {
   cardColor: string
@@ -59,12 +57,14 @@ export const CardContent = ({ cardColor, cardContentEntries, cardImage }: Props)
                     ${styles.descriptionContainer}  
                     ${cardConfig[`${cardColor}` as keyof CardConfig].color} 
                     ${cardImage ? 'h-60' : 'h-full'}
-                    py-2 px-12`}>
+                    py-2 px-12`}
+                >
                   <div
                     style={{
                       display: 'grid',
                       justifyItems: 'center'
-                    }}>
+                    }}
+                  >
                     <p className={`${styles.descriptionTitle}`}>{cardContent.cardTitle}</p>
                     <RichText content={cardContent.cardDescription.json} />
                   </div>
@@ -80,7 +80,8 @@ export const CardContent = ({ cardColor, cardContentEntries, cardImage }: Props)
             ${styles.descriptionContainer} 
             ${cardConfig[`${cardColor}` as keyof CardConfig].color} 
             ${cardImage ? '' : 'h-full'}
-            p-4`}>
+            p-4`}
+        >
           <p className={`${styles.descriptionTitle}`}>{cardContentEntries[0].cardTitle}</p>
           <RichText content={cardContentEntries[0].cardDescription.json} />
         </div>

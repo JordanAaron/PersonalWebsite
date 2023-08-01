@@ -1,8 +1,7 @@
-import React from 'react'
 import Image from 'next/image'
+import React from 'react'
 
 import type { CardType } from '../../types/components'
-
 import styles from './card.module.css'
 import { CardContent } from './cardContent'
 
@@ -15,9 +14,8 @@ export const Card = ({ card }: Props): JSX.Element => {
 
   return (
     <div
-      className={`${
-        cardImage !== undefined ? styles.containerWithImage : styles.containerNoImage
-      }`}>
+      className={`${cardImage !== undefined ? styles.containerWithImage : styles.containerNoImage}`}
+    >
       {cardImage !== undefined && (
         <div className={styles.imageContainer}>
           <Image
