@@ -2,6 +2,7 @@ import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import React from 'react'
 
+import { Carousel } from '../components/Carousel/carousel'
 import { Sections } from '../components/Sections/sections'
 import { Container } from '../components/container'
 import { Layout } from '../components/layout'
@@ -24,6 +25,11 @@ export default function Index({ preview, ogImageUrl, sections }: Props): JSX.Ele
         </Head>
         <Container>
           <Sections sections={sections} />
+          <Carousel
+            type=""
+            carouselContent={['item 1', 'item 2', 'item 3', 'item 4', 'item 5']}
+            contentSize={200}
+          />
         </Container>
       </Layout>
     </>
