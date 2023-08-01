@@ -35,7 +35,9 @@ export const WorkExperienceSection = ({ sectionTitle, jobs }: Props): JSX.Elemen
                   <br />
                   <div className={`${styles.jobDescription}`}>
                     <hr />
-                    <RichText content={description.json} />
+                    <div className={styles.descriptionText}>
+                      <RichText content={description.json} />
+                    </div>
                   </div>
                 </>
               ) : (
