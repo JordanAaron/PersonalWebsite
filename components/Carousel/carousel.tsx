@@ -8,14 +8,17 @@ interface Props {
   contentSize: number
 }
 
-export const Carousel = ({ type, carouselContent }: Props): JSX.Element => {
+export const Carousel = ({ type, carouselContent, contentSize }: Props): JSX.Element => {
   const [activeIndex, setActiveIndex] = useState(0)
 
   const content = carouselContent.map((item, index) => (
     <div
       key={index}
       className={styles.carouselItem}
-      style={{ opacity: `${carouselContent[activeIndex] === item ? '100%' : '40%'}` }}>
+      style={{
+        opacity: `${carouselContent[activeIndex] === item ? '100%' : '0%'}`,
+        width: `${contentSize}px`
+      }}>
       {item}
     </div>
   ))
@@ -31,10 +34,10 @@ export const Carousel = ({ type, carouselContent }: Props): JSX.Element => {
 
   return (
     <div className={styles.carouselContainer}>
-      <div className={styles.carousel}>
+      <div className={styles.carousel} style={{ width: `${contentSize}px` }}>
         <div
           className={styles.inner}
-          style={{ transform: `translateX(-${activeIndex * 200}px)`, transition: '1s' }}>
+          style={{ transform: `translateX(-${activeIndex * contentSize}px)`, transition: '2s' }}>
           {content}
         </div>
       </div>
