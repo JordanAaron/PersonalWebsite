@@ -12,7 +12,7 @@ const Bold = ({ children }: any): JSX.Element => <strong>{children}</strong>
 const Italic = ({ children }: any): JSX.Element => <i>{children}</i>
 const Underlined = ({ children }: any): JSX.Element => <p className="underline">{children}</p>
 
-const Text = ({ children }: any): JSX.Element => <p className="align-center my-4">{children}</p>
+const Text = ({ children }: any): JSX.Element => <p className="align-center my-3">{children}</p>
 
 const defaultOptions: Options = {
   renderMark: {

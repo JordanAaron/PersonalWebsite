@@ -23,6 +23,15 @@
   grid-column-end: 3;
 }
 
+.descriptionText {
+  background-color: rgba(64, 64, 64, 0.8);
+  border-radius: 10px;
+}
+
+.descriptionText > p {
+  padding: 1rem;
+}
+
 @media (min-width: theme(screens[tablet])) {
   .sectionTitle {
     font-size: 1.875rem;
