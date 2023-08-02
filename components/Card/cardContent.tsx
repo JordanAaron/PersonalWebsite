@@ -72,11 +72,11 @@ export const CardContent = ({ cardColor, cardContentEntries, cardImage }: Props)
         //     )
         //   })}
         // </BSCarousel>
-        <div className={`bg-mediumGreen`}>
+        <div className={`bg-moderateCyan`}>
           <Carousel
-            type=""
+            type="button"
             carouselContent={['item 1', 'item 2', 'item 3', 'item 4', 'item 5']}
-            carouselWidth={80}
+            carouselWidth={100}
           />
         </div>
       ) : (
