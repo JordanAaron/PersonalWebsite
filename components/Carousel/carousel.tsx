@@ -5,10 +5,10 @@ import styles from './carousel.module.css'
 interface Props {
   type: string
   carouselContent: Array<string>
-  contentSize: number
+  carouselWidth: number
 }
 
-export const Carousel = ({ type, carouselContent, contentSize }: Props): JSX.Element => {
+export const Carousel = ({ type, carouselContent, carouselWidth }: Props): JSX.Element => {
   const [activeIndex, setActiveIndex] = useState(0)
 
   const content = carouselContent.map((item, index) => (
@@ -16,8 +16,7 @@ export const Carousel = ({ type, carouselContent, contentSize }: Props): JSX.Ele
       key={index}
       className={styles.carouselItem}
       style={{
-        opacity: `${carouselContent[activeIndex] === item ? '100%' : '0%'}`,
-        width: `${contentSize}px`
+        opacity: `${carouselContent[activeIndex] === item ? '100%' : '0%'}`
       }}>
       {item}
     </div>
@@ -34,10 +33,14 @@ export const Carousel = ({ type, carouselContent, contentSize }: Props): JSX.Ele
 
   return (
     <div className={styles.carouselContainer}>
-      <div className={styles.carousel} style={{ width: `${contentSize}px` }}>
+      <div className={styles.carousel} style={{ width: `${carouselWidth}%` }}>
         <div
           className={styles.inner}
-          style={{ transform: `translateX(-${activeIndex * contentSize}px)`, transition: '2s' }}>
+          style={{
+            width: `${100 * carouselContent.length}%`,
+            transform: `translateX(-${activeIndex * 20}%)`,
+            transition: '2s'
+          }}>
           {content}
         </div>
       </div>
