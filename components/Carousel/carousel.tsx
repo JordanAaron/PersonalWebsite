@@ -38,16 +38,15 @@ export const Carousel = ({
       {inputType === 'button' ? (
         <div className={styles.carouselContainerButton}>
           <button
+            style={{
+              opacity: `${activeItem === firstItem ? '20%' : '100%'}`,
+              cursor: `${activeItem === firstItem ? 'default' : 'pointer'}`,
+              transition: '1s'
+            }}
             onClick={() => {
               updateIndex(activeItem - 1)
             }}>
-            <ArrowLeftIcon
-              style={{
-                opacity: `${activeItem === firstItem ? '20%' : '100%'}`,
-                cursor: `${activeItem === firstItem ? 'default' : 'pointer'}`,
-                transition: '1s'
-              }}
-            />
+            <ArrowLeftIcon />
           </button>
           <div className={styles.carousel} style={{ width: `${carouselWidth}%` }}>
             <div
@@ -61,16 +60,15 @@ export const Carousel = ({
             </div>
           </div>
           <button
+            style={{
+              opacity: `${activeItem === lastItem ? '20%' : '100%'}`,
+              cursor: `${activeItem === lastItem ? 'default' : 'pointer'}`,
+              transition: '1s'
+            }}
             onClick={() => {
               updateIndex(activeItem + 1)
             }}>
-            <ArrowRightIcon
-              style={{
-                opacity: `${activeItem === lastItem ? '20%' : '100%'}`,
-                cursor: `${activeItem === lastItem ? 'default' : 'pointer'}`,
-                transition: '1s'
-              }}
-            />
+            <ArrowRightIcon />
           </button>
         </div>
       ) : (
