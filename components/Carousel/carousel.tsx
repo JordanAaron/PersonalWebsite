@@ -21,11 +21,14 @@ export const Carousel = ({
   activeItem,
   setActiveItem
 }: Props): JSX.Element => {
+  const firstItem = 0
+  const lastItem = contentSize - 1
+
   const updateIndex = (newIndex: number) => {
     if (newIndex < 0) {
-      newIndex = 0
+      newIndex = firstItem
     } else if (newIndex >= contentSize) {
-      newIndex = contentSize - 1
+      newIndex = lastItem
     }
     setActiveItem(newIndex)
   }
@@ -38,7 +41,13 @@ export const Carousel = ({
             onClick={() => {
               updateIndex(activeItem - 1)
             }}>
-            <ArrowLeftIcon />
+            <ArrowLeftIcon
+              style={{
+                opacity: `${activeItem === firstItem ? '20%' : '100%'}`,
+                cursor: `${activeItem === firstItem ? 'default' : 'pointer'}`,
+                transition: '1s'
+              }}
+            />
           </button>
           <div className={styles.carousel} style={{ width: `${carouselWidth}%` }}>
             <div
@@ -52,7 +61,13 @@ export const Carousel = ({
             </div>
           </div>
           <button onClick={() => updateIndex(activeItem + 1)}>
-            <ArrowRightIcon />
+            <ArrowRightIcon
+              style={{
+                opacity: `${activeItem === lastItem ? '20%' : '100%'}`,
+                cursor: `${activeItem === lastItem ? 'default' : 'pointer'}`,
+                transition: '1s'
+              }}
+            />
           </button>
         </div>
       ) : (
