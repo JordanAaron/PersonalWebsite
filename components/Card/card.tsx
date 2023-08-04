@@ -69,7 +69,7 @@ export const Card = ({ card }: Props): JSX.Element => {
         className={`
         ${styles.descriptionContainer}  
         ${cardConfig[`${cardColor}` as keyof CardConfig].color}
-        ${cardImage ? 'text-center' : 'h-full p-4'} 
+        ${cardImage !== undefined ? 'text-center' : 'h-full p-4'} 
       `}>
         <CardContent cardContentEntries={cardContentEntries} />
       </div>

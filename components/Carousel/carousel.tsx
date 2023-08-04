@@ -1,6 +1,6 @@
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight'
-import React, { Dispatch, ReactNode, SetStateAction } from 'react'
+import React, { type Dispatch, type ReactNode, type SetStateAction } from 'react'
 
 import styles from './carousel.module.css'
 
@@ -24,7 +24,7 @@ export const Carousel = ({
   const firstItem = 0
   const lastItem = contentSize - 1
 
-  const updateIndex = (newIndex: number) => {
+  const updateIndex = (newIndex: number): void => {
     if (newIndex < 0) {
       newIndex = firstItem
     } else if (newIndex >= contentSize) {
@@ -60,7 +60,10 @@ export const Carousel = ({
               {children}
             </div>
           </div>
-          <button onClick={() => updateIndex(activeItem + 1)}>
+          <button
+            onClick={() => {
+              updateIndex(activeItem + 1)
+            }}>
             <ArrowRightIcon
               style={{
                 opacity: `${activeItem === lastItem ? '20%' : '100%'}`,
