@@ -2,7 +2,6 @@ import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import React from 'react'
 
-import { Carousel } from '../components/Carousel/carousel'
 import { Sections } from '../components/Sections/sections'
 import { Container } from '../components/container'
 import { Layout } from '../components/layout'
