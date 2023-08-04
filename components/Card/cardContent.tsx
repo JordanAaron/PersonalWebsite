@@ -1,87 +1,52 @@
-// Tailwind doesn't allow for dynamic values to be used in classes so I've created a CardConfig to hold the colors as an alternative
-import React from 'react'
-import Carousel from 'react-bootstrap/Carousel'
+import React, { useState } from 'react'
 
 import type { CardContent as CardContentType } from '../../types/components'
+import { Carousel } from '../Carousel/carousel'
 import { RichText } from '../RichText/richText'
 import styles from './card.module.css'
 
 interface Props {
-  cardColor: string
   cardContentEntries: CardContentType[]
-  cardImage: boolean
 }
 
-interface CardConfig {
-  brightGreen: { color: string }
-  mediumGreen: { color: string }
-  darkGreen: { color: string }
-  moderateCyan: { color: string }
-  pastelCyan: { color: string }
-  paleCyan: { color: string }
-}
-
-const cardConfig: CardConfig = {
-  brightGreen: {
-    color: 'bg-brightGreen'
-  },
-  mediumGreen: {
-    color: 'bg-mediumGreen'
-  },
-  darkGreen: {
-    color: 'bg-darkGreen'
-  },
-  moderateCyan: {
-    color: 'bg-moderateCyan'
-  },
-  pastelCyan: {
-    color: 'bg-pastelCyan'
-  },
-  paleCyan: {
-    color: 'bg-paleCyan'
-  }
-}
-
-export const CardContent = ({ cardColor, cardContentEntries, cardImage }: Props): JSX.Element => {
+export const CardContent = ({ cardContentEntries }: Props): JSX.Element => {
   const hasMultipleEntries = cardContentEntries.length > 1
+
+  const [activeCard, setActiveCard] = useState(0)
 
   return (
     <>
       {hasMultipleEntries ? (
-        <Carousel indicators={false} interval={null}>
-          {cardContentEntries.map((cardContent: CardContentType) => {
-            return (
-              <Carousel.Item key={cardContent.cardTitle}>
+        <Carousel
+          inputType="button"
+          contentSize={cardContentEntries.length}
+          carouselWidth={100}
+          activeItem={activeCard}
+          setActiveItem={setActiveCard}>
+          {cardContentEntries.map((content, index) => (
+            <div
+              key={index}
+              className={styles.carouselItem}
+              style={{
+                opacity: `${cardContentEntries[activeCard] === content ? '100%' : '0%'}`,
+                width: `${100 / cardContentEntries.length}%`,
+                transition: '1s'
+              }}>
+              <div className={`${styles.descriptionContainer}`}>
                 <div
-                  className={`
-                    ${styles.descriptionContainer}  
-                    ${cardConfig[`${cardColor}` as keyof CardConfig].color} 
-                    ${cardImage ? 'h-60' : 'h-full'}
-                    py-2 px-12`}
-                >
-                  <div
-                    style={{
-                      display: 'grid',
-                      justifyItems: 'center'
-                    }}
-                  >
-                    <p className={`${styles.descriptionTitle}`}>{cardContent.cardTitle}</p>
-                    <RichText content={cardContent.cardDescription.json} />
-                  </div>
+                  style={{
+                    display: 'grid',
+                    justifyItems: 'center'
+                  }}>
+                  <p className={`${styles.descriptionTitle}`}>{content.cardTitle}</p>
+                  <RichText content={content.cardDescription.json} />
                 </div>
-              </Carousel.Item>
-            )
-          })}
+              </div>
+            </div>
+          ))}
         </Carousel>
       ) : (
-        <div
-          key={cardContentEntries[0].cardTitle}
-          className={`
-            ${styles.descriptionContainer} 
-            ${cardConfig[`${cardColor}` as keyof CardConfig].color} 
-            ${cardImage ? '' : 'h-full'}
-            p-4`}
-        >
+        <div key={cardContentEntries[0].cardTitle}>
           <p className={`${styles.descriptionTitle}`}>{cardContentEntries[0].cardTitle}</p>
           <RichText content={cardContentEntries[0].cardDescription.json} />
         </div>

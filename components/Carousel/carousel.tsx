@@ -1,9 +1,100 @@
-import React from 'react'
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft'
+import ArrowRightIcon from '@mui/icons-material/ArrowRight'
+import React, { type Dispatch, type ReactNode, type SetStateAction } from 'react'
+
+import styles from './carousel.module.css'
 
 interface Props {
-  type: string
+  inputType: 'button' | 'slider'
+  contentSize: number
+  carouselWidth: number
+  children: ReactNode
+  activeItem: number
+  setActiveItem: Dispatch<SetStateAction<number>>
 }
 
-export const Carousel = () => {
-  return <div>Carousel Component</div>
+export const Carousel = ({
+  inputType,
+  contentSize,
+  carouselWidth,
+  children,
+  activeItem,
+  setActiveItem
+}: Props): JSX.Element => {
+  const firstItem = 0
+  const lastItem = contentSize - 1
+
+  const updateIndex = (newIndex: number): void => {
+    if (newIndex < 0) {
+      newIndex = firstItem
+    } else if (newIndex >= contentSize) {
+      newIndex = lastItem
+    }
+    setActiveItem(newIndex)
+  }
+
+  return (
+    <>
+      {inputType === 'button' ? (
+        <div className={styles.carouselContainerButton}>
+          <button
+            style={{
+              opacity: `${activeItem === firstItem ? '20%' : '100%'}`,
+              cursor: `${activeItem === firstItem ? 'default' : 'pointer'}`,
+              transition: '1s'
+            }}
+            onClick={() => {
+              updateIndex(activeItem - 1)
+            }}>
+            <ArrowLeftIcon />
+          </button>
+          <div className={styles.carousel} style={{ width: `${carouselWidth}%` }}>
+            <div
+              className={styles.inner}
+              style={{
+                width: `${100 * contentSize}%`,
+                transform: `translateX(-${activeItem * (100 / contentSize)}%)`,
+                transition: '2s'
+              }}>
+              {children}
+            </div>
+          </div>
+          <button
+            style={{
+              opacity: `${activeItem === lastItem ? '20%' : '100%'}`,
+              cursor: `${activeItem === lastItem ? 'default' : 'pointer'}`,
+              transition: '1s'
+            }}
+            onClick={() => {
+              updateIndex(activeItem + 1)
+            }}>
+            <ArrowRightIcon />
+          </button>
+        </div>
+      ) : (
+        <div className={styles.carouselContainerSlider}>
+          <div className={styles.carousel} style={{ width: `${carouselWidth}%` }}>
+            <div
+              className={styles.inner}
+              style={{
+                width: `${100 * contentSize}%`,
+                transform: `translateX(-${activeItem * (100 / contentSize)}%)`,
+                transition: '2s'
+              }}>
+              {children}
+            </div>
+          </div>
+          <input
+            type="range"
+            defaultValue={0}
+            min={0}
+            max={contentSize - 1}
+            onChange={(e) => {
+              updateIndex(Number(e.currentTarget.value))
+            }}
+          />
+        </div>
+      )}
+    </>
+  )
 }
