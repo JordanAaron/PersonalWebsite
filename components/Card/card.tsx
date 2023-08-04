@@ -9,13 +9,49 @@ interface Props {
   card: CardType
 }
 
+// Tailwind doesn't allow for dynamic values to be used in classes so I've created a CardConfig to hold the colors as an alternative
+interface CardConfig {
+  brightGreen: { color: string }
+  mediumGreen: { color: string }
+  darkGreen: { color: string }
+  moderateCyan: { color: string }
+  pastelCyan: { color: string }
+  paleCyan: { color: string }
+}
+
+const cardConfig: CardConfig = {
+  brightGreen: {
+    color: 'bg-brightGreen'
+  },
+  mediumGreen: {
+    color: 'bg-mediumGreen'
+  },
+  darkGreen: {
+    color: 'bg-darkGreen'
+  },
+  moderateCyan: {
+    color: 'bg-moderateCyan'
+  },
+  pastelCyan: {
+    color: 'bg-pastelCyan'
+  },
+  paleCyan: {
+    color: 'bg-paleCyan'
+  }
+}
+
 export const Card = ({ card }: Props): JSX.Element => {
-  const { cardImage, cardContentEntriesCollection: cardContentEntries, cardColor } = card
+  const {
+    cardImage,
+    cardContentEntriesCollection: { items: cardContentEntries },
+    cardColor
+  } = card
 
   return (
     <div
-      className={`${cardImage !== undefined ? styles.containerWithImage : styles.containerNoImage}`}
-    >
+      className={`${
+        cardImage !== undefined ? styles.containerWithImage : styles.containerNoImage
+      }`}>
       {cardImage !== undefined && (
         <div className={styles.imageContainer}>
           <Image
@@ -29,11 +65,14 @@ export const Card = ({ card }: Props): JSX.Element => {
           />
         </div>
       )}
-      <CardContent
-        cardColor={cardColor}
-        cardContentEntries={cardContentEntries.items}
-        cardImage={cardImage !== undefined}
-      />
+      <div
+        className={`
+        ${styles.descriptionContainer}  
+        ${cardConfig[`${cardColor}` as keyof CardConfig].color}
+        ${cardImage ? '' : 'h-full p-4'} 
+      `}>
+        <CardContent cardContentEntries={cardContentEntries} />
+      </div>
     </div>
   )
 }
