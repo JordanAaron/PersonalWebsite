@@ -25,11 +25,6 @@ export default function Index({ preview, ogImageUrl, sections }: Props): JSX.Ele
         </Head>
         <Container>
           <Sections sections={sections} />
-          <Carousel
-            type=""
-            carouselContent={['item 1', 'item 2', 'item 3', 'item 4', 'item 5']}
-            contentSize={200}
-          />
         </Container>
       </Layout>
     </>

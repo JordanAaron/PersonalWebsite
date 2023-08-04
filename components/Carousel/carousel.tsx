@@ -1,45 +1,42 @@
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight'
-import React, { useState } from 'react'
+import React, { Dispatch, ReactNode, SetStateAction } from 'react'
 
 import styles from './carousel.module.css'
 
 interface Props {
-  type: 'button' | 'inputRange'
-  carouselContent: Array<string>
+  inputType: 'button' | 'slider'
+  contentSize: number
   carouselWidth: number
+  children: ReactNode
+  activeItem: number
+  setActiveItem: Dispatch<SetStateAction<number>>
 }
 
-export const Carousel = ({ type, carouselContent, carouselWidth }: Props): JSX.Element => {
-  const [activeIndex, setActiveIndex] = useState(0)
-
-  const content = carouselContent.map((item, index) => (
-    <div
-      key={index}
-      className={styles.carouselItem}
-      style={{
-        opacity: `${carouselContent[activeIndex] === item ? '100%' : '0%'}`
-      }}>
-      {item}
-    </div>
-  ))
-
+export const Carousel = ({
+  inputType,
+  contentSize,
+  carouselWidth,
+  children,
+  activeItem,
+  setActiveItem
+}: Props): JSX.Element => {
   const updateIndex = (newIndex: number) => {
     if (newIndex < 0) {
       newIndex = 0
-    } else if (newIndex >= content.length) {
-      newIndex = content.length - 1
+    } else if (newIndex >= contentSize) {
+      newIndex = contentSize - 1
     }
-    setActiveIndex(newIndex)
+    setActiveItem(newIndex)
   }
 
   return (
     <>
-      {type === 'button' ? (
-        <div className={styles.carouselContainer}>
+      {inputType === 'button' ? (
+        <div className={styles.carouselContainerButton}>
           <button
             onClick={() => {
-              updateIndex(activeIndex - 1)
+              updateIndex(activeItem - 1)
             }}>
             <ArrowLeftIcon />
           </button>
@@ -47,35 +44,35 @@ export const Carousel = ({ type, carouselContent, carouselWidth }: Props): JSX.E
             <div
               className={styles.inner}
               style={{
-                width: `${100 * carouselContent.length}%`,
-                transform: `translateX(-${activeIndex * 20}%)`,
+                width: `${100 * contentSize}%`,
+                transform: `translateX(-${activeItem * (100 / contentSize)}%)`,
                 transition: '2s'
               }}>
-              {content}
+              {children}
             </div>
           </div>
-          <button onClick={() => updateIndex(activeIndex + 1)}>
+          <button onClick={() => updateIndex(activeItem + 1)}>
             <ArrowRightIcon />
           </button>
         </div>
       ) : (
-        <div className={styles.carouselContainer}>
+        <div className={styles.carouselContainerSlider}>
           <div className={styles.carousel} style={{ width: `${carouselWidth}%` }}>
             <div
               className={styles.inner}
               style={{
-                width: `${100 * carouselContent.length}%`,
-                transform: `translateX(-${activeIndex * 20}%)`,
+                width: `${100 * contentSize}%`,
+                transform: `translateX(-${activeItem * (100 / contentSize)}%)`,
                 transition: '2s'
               }}>
-              {content}
+              {children}
             </div>
           </div>
           <input
             type="range"
             defaultValue={0}
             min={0}
-            max={content.length - 1}
+            max={contentSize - 1}
             onChange={(e) => {
               updateIndex(Number(e.currentTarget.value))
             }}
@@ -85,30 +82,3 @@ export const Carousel = ({ type, carouselContent, carouselWidth }: Props): JSX.E
     </>
   )
 }
-
-// const ProjectSectionsCarousel = (): JSX.Element => {
-//   return (
-//     <div className={styles.carouselContainer}>
-//       <div className={styles.carousel} style={{ width: `${carouselWidth}%` }}>
-//         <div
-//           className={styles.inner}
-//           style={{
-//             width: `${100 * carouselContent.length}%`,
-//             transform: `translateX(-${activeIndex * 20}%)`,
-//             transition: '2s'
-//           }}>
-//           {content}
-//         </div>
-//       </div>
-//       <input
-//         type="range"
-//         defaultValue={0}
-//         min={0}
-//         max={content.length - 1}
-//         onChange={(e) => {
-//           updateIndex(Number(e.currentTarget.value))
-//         }}
-//       />
-//     </div>
-//   )
-// }

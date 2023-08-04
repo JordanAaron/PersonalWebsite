@@ -1,24 +1,17 @@
-.carouselContainer {
-  /* border: 1px solid blue; */
-  /* display: grid; */
-  /* justify-content: center; */
-  /* width: 100%; */
+.carouselContainerButton {
+  display: flex;
 }
 
 .carousel {
-  border: 1px solid red;
   margin: auto;
   overflow: hidden;
 }
 
 .inner {
-  /* border: 1px solid greenyellow; */
   display: inline-flex;
 }
 
 .carouselItem {
-  /* border: 1px solid black; */
-  width: 20%;
   text-align: center;
   transition: 1s;
 }
