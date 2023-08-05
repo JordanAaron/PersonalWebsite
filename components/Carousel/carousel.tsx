@@ -38,6 +38,7 @@ export const Carousel = ({
       {inputType === 'button' ? (
         <div className={styles.carouselContainerButton}>
           <button
+            aria-label="Left arrow button"
             style={{
               opacity: `${activeItem === firstItem ? '20%' : '100%'}`,
               cursor: `${activeItem === firstItem ? 'default' : 'pointer'}`,
@@ -60,6 +61,7 @@ export const Carousel = ({
             </div>
           </div>
           <button
+            aria-label="Right arrow button"
             style={{
               opacity: `${activeItem === lastItem ? '20%' : '100%'}`,
               cursor: `${activeItem === lastItem ? 'default' : 'pointer'}`,
