@@ -13,5 +13,10 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  width: fit-content;
+}
+
+@media (max-width: theme(screens[surfaceDuo])) {
+  body {
+    width: fit-content;
+  }
 }
