@@ -1,11 +1,10 @@
-import React from 'react'
+import EmailIcon from '@mui/icons-material/Email'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import EmailIcon from '@mui/icons-material/Email'
+import React from 'react'
 
-import { Card } from '../Card/card'
 import type { CardType } from '../../types/components'
-
+import { Card } from '../Card/card'
 import styles from './siteIntroSection.module.css'
 
 interface Props {

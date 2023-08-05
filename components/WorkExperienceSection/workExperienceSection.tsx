@@ -1,9 +1,8 @@
-import React from 'react'
 import Image from 'next/image'
+import React from 'react'
 
-import { RichText } from '../RichText/richText'
 import type { Job } from '../../types/components'
-
+import { RichText } from '../RichText/richText'
 import styles from './workExperienceSection.module.css'
 
 interface Props {

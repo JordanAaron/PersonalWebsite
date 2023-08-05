@@ -1,13 +1,12 @@
-import React from 'react'
-import Head from 'next/head'
 import type { GetStaticProps } from 'next'
+import Head from 'next/head'
+import React from 'react'
 
+import { Sections } from '../components/Sections/sections'
 import { Container } from '../components/container'
 import { Layout } from '../components/layout'
-import { Sections } from '../components/Sections/sections'
-import type { Section } from '../types/sections'
-
 import { getOGImageById, getPageDataByID } from '../lib/api'
+import type { Section } from '../types/sections'
 
 interface Props {
   preview: boolean

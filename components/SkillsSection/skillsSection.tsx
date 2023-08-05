@@ -2,7 +2,6 @@ import React from 'react'
 
 import type { CardType } from '../../types/components'
 import { Card } from '../Card/card'
-
 import styles from './skillsSection.module.css'
 
 interface Props {

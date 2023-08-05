@@ -1,7 +1,6 @@
-import React, { type ReactNode } from 'react'
-
 import { type Options, documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { type Document, BLOCKS, MARKS } from '@contentful/rich-text-types'
+import { BLOCKS, type Document, MARKS } from '@contentful/rich-text-types'
+import React, { type ReactNode } from 'react'
 
 interface Props {
   content: Document
