@@ -15,8 +15,8 @@
 
 .descriptionTitle {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.35rem;
+  padding: 0.5rem 0;
 }
 
 @media (min-width: theme(screens[surfaceDuo])) {
@@ -33,6 +33,12 @@
   }
 
   .descriptionTitle {
-    font-size: 2rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: theme(screens[laptop])) {
+  .descriptionTitle {
+    font-size: 1.8rem;
   }
 }
