@@ -1,5 +1,5 @@
 .containerWithImage {
-  width: 80%;
+  max-width: 75vw;
   margin: 1rem auto;
 }
 
@@ -27,6 +27,10 @@
 }
 
 @media (min-width: theme(screens[tablet])) {
+  .containerWithImage {
+    max-width: 50vw;
+  }
+
   .containerNoImage {
     min-width: 100%;
     margin: 0;
@@ -38,6 +42,10 @@
 }
 
 @media (min-width: theme(screens[laptop])) {
+  .containerWithImage {
+    max-width: 25vw;
+  }
+
   .descriptionTitle {
     font-size: 1.8rem;
   }
