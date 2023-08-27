@@ -17,6 +17,8 @@
 
 .carouselTitleUnderline {
   margin: 0 1.5rem;
+  opacity: 25%;
+  border-color: theme(colors[black]);
 }
 
 .inner {
