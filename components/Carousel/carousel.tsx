@@ -40,7 +40,7 @@ export const Carousel = ({
       {Boolean(carouselTitle) && (
         <>
           <p className={styles.carouselTitle}>{carouselTitle}</p>
-          <hr style={{ margin: '0 3rem' }} />
+          <hr className={styles.carouselTitleUnderline} />
         </>
       )}
       {inputType === 'button' ? (
