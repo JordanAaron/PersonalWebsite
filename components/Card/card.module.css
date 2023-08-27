@@ -1,5 +1,5 @@
 .containerWithImage {
-  width: 80%;
+  max-width: 80vw;
   margin: 1rem auto;
 }
 
@@ -15,8 +15,8 @@
 
 .descriptionTitle {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.35rem;
+  padding: 0.5rem 0;
 }
 
 @media (min-width: theme(screens[surfaceDuo])) {
@@ -27,12 +27,26 @@
 }
 
 @media (min-width: theme(screens[tablet])) {
+  .containerWithImage {
+    max-width: 40vw;
+  }
+
   .containerNoImage {
     min-width: 100%;
     margin: 0;
   }
 
   .descriptionTitle {
-    font-size: 2rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: theme(screens[desktop])) {
+  .containerWithImage {
+    max-width: 25vw;
+  }
+
+  .descriptionTitle {
+    font-size: 1.8rem;
   }
 }

@@ -23,6 +23,10 @@
   grid-column-end: 3;
 }
 
+.jobDescription > hr {
+  margin-bottom: 1rem;
+}
+
 .descriptionText {
   background-color: rgba(64, 64, 64, 0.8);
   border-radius: 10px;

@@ -5,19 +5,21 @@ import React, { type Dispatch, type ReactNode, type SetStateAction } from 'react
 import styles from './carousel.module.css'
 
 interface Props {
+  children: ReactNode
   inputType: 'button' | 'slider'
   contentSize: number
+  carouselTitle?: string // TODO: This probably shouldn't be placed here. Use case only for siteIntroCard content. Fix it
   carouselWidth: number
-  children: ReactNode
   activeItem: number
   setActiveItem: Dispatch<SetStateAction<number>>
 }
 
 export const Carousel = ({
+  children,
   inputType,
   contentSize,
+  carouselTitle,
   carouselWidth,
-  children,
   activeItem,
   setActiveItem
 }: Props): JSX.Element => {
@@ -35,8 +37,14 @@ export const Carousel = ({
 
   return (
     <>
+      {Boolean(carouselTitle) && (
+        <>
+          <p className={styles.carouselTitle}>{carouselTitle}</p>
+          <hr className={styles.carouselTitleUnderline} />
+        </>
+      )}
       {inputType === 'button' ? (
-        <div className={styles.carouselContainerButton}>
+        <div className={styles.buttonCarouselContainer}>
           <button
             aria-label="Left arrow button"
             style={{

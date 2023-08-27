@@ -14,9 +14,3 @@ body {
   background-size: cover;
   background-position: center;
 }
-
-@media (max-width: theme(screens[surfaceDuo])) {
-  body {
-    width: fit-content;
-  }
-}

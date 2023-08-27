@@ -20,6 +20,7 @@ export const CardContent = ({ cardContentEntries }: Props): JSX.Element => {
         <Carousel
           inputType="button"
           contentSize={cardContentEntries.length}
+          carouselTitle="Some things about me" // TODO: change this to cms
           carouselWidth={100}
           activeItem={activeCard}
           setActiveItem={setActiveCard}>
@@ -33,14 +34,8 @@ export const CardContent = ({ cardContentEntries }: Props): JSX.Element => {
                 transition: '1s'
               }}>
               <div className={`${styles.descriptionContainer}`}>
-                <div
-                  style={{
-                    display: 'grid',
-                    justifyItems: 'center'
-                  }}>
-                  <p className={`${styles.descriptionTitle}`}>{content.cardTitle}</p>
-                  <RichText content={content.cardDescription.json} />
-                </div>
+                <p className={`${styles.descriptionTitle}`}>{content.cardTitle}</p>
+                <RichText content={content.cardDescription.json} />
               </div>
             </div>
           ))}
