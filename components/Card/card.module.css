@@ -1,5 +1,5 @@
 .containerWithImage {
-  max-width: 75vw;
+  max-width: 80vw;
   margin: 1rem auto;
 }
 
@@ -28,7 +28,7 @@
 
 @media (min-width: theme(screens[tablet])) {
   .containerWithImage {
-    max-width: 50vw;
+    max-width: 40vw;
   }
 
   .containerNoImage {
@@ -41,7 +41,7 @@
   }
 }
 
-@media (min-width: theme(screens[laptop])) {
+@media (min-width: theme(screens[desktop])) {
   .containerWithImage {
     max-width: 25vw;
   }

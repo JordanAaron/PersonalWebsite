@@ -19,7 +19,7 @@
   }
 }
 
-@media (min-width: theme(screens[laptop])) {
+@media (min-width: theme(screens[desktop])) {
   .skillCardsContainer {
     gap: 2rem;
     max-width: 70rem;
