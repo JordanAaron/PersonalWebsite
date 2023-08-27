@@ -16,8 +16,6 @@ interface Props {
   sections: SectionType[]
 }
 
-// TODO: You need to filter the data you're pulling through into their rightful sections
-
 export const Sections = ({ sections }: Props): JSX.Element => {
   return (
     <div className={styles.container}>
