@@ -3,12 +3,12 @@
 }
 
 .sectionWrapper {
-  display: grid;
-  padding: 2rem 1rem;
+  padding: 1rem;
 }
 
 @media (min-width: theme(screens[tablet])) {
   .sectionWrapper {
+    display: grid;
     align-items: center;
     height: 100vh;
   }

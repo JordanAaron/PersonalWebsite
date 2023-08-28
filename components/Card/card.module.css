@@ -63,11 +63,13 @@
   }
 }
 
-@media (min-width: theme(screens[desktop])) {
+@media (min-width: theme(screens[largeTablet])) {
   .containerWithImage {
     max-width: 25vw;
   }
+}
 
+@media (min-width: theme(screens[desktop])) {
   .descriptionHeading {
     font-size: 1.8rem;
   }
