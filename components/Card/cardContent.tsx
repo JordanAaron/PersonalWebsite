@@ -20,7 +20,6 @@ export const CardContent = ({ cardContentEntries }: Props): JSX.Element => {
         <Carousel
           inputType="button"
           contentSize={cardContentEntries.length}
-          carouselTitle="Some things about me" // TODO: change this to cms
           carouselWidth={100}
           activeItem={activeCard}
           setActiveItem={setActiveCard}>

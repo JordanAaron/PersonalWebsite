@@ -8,7 +8,6 @@ interface Props {
   children: ReactNode
   inputType: 'button' | 'slider'
   contentSize: number
-  carouselTitle?: string // TODO: This probably shouldn't be placed here. Use case only for siteIntroCard content. Fix it
   carouselWidth: number
   activeItem: number
   setActiveItem: Dispatch<SetStateAction<number>>
@@ -18,7 +17,6 @@ export const Carousel = ({
   children,
   inputType,
   contentSize,
-  carouselTitle,
   carouselWidth,
   activeItem,
   setActiveItem
@@ -37,12 +35,6 @@ export const Carousel = ({
 
   return (
     <>
-      {/* {Boolean(carouselTitle) && (
-        <>
-          <p className={styles.carouselTitle}>{carouselTitle}</p>
-          <hr className={styles.carouselTitleUnderline} />
-        </>
-      )} */}
       {inputType === 'button' ? (
         <div className={styles.buttonCarouselContainer}>
           <button
