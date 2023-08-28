@@ -2,28 +2,26 @@ import { type Options, documentToReactComponents } from '@contentful/rich-text-r
 import { BLOCKS, type Document, MARKS } from '@contentful/rich-text-types'
 import React, { type ReactNode } from 'react'
 
+import styles from './richText.module.css'
+
 interface Props {
   content: Document
   options?: Options
 }
 
-const Bold = ({ children }: any): JSX.Element => <strong>{children}</strong>
-const Italic = ({ children }: any): JSX.Element => <i>{children}</i>
-const Underlined = ({ children }: any): JSX.Element => <p className="underline">{children}</p>
-
-const Text = ({ children }: any): JSX.Element => <p>{children}</p>
-
 const defaultOptions: Options = {
   renderMark: {
-    [MARKS.BOLD]: (text: ReactNode) => <Bold>{text}</Bold>,
-    [MARKS.ITALIC]: (text: ReactNode) => <Italic>{text}</Italic>,
-    [MARKS.UNDERLINE]: (text: ReactNode) => <Underlined>{text}</Underlined>
+    [MARKS.BOLD]: (text: ReactNode) => <strong>{text}</strong>,
+    [MARKS.ITALIC]: (text: ReactNode) => <i>{text}</i>,
+    [MARKS.UNDERLINE]: (text: ReactNode) => <u>{text}</u>
   },
   renderNode: {
-    [BLOCKS.PARAGRAPH]: (node: any, children: any) => <Text>{children}</Text>
+    [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
+    [BLOCKS.UL_LIST]: (node, children) => <ul className={styles.unorderedList}>{children}</ul>,
+    [BLOCKS.LIST_ITEM]: (node, children) => <li>{children}</li>
   }
 }
 
-export const RichText = ({ content, options }: Props): JSX.Element => (
-  <>{documentToReactComponents(content, defaultOptions)}</>
-)
+export const RichText = ({ content, options }: Props): JSX.Element => {
+  return <>{documentToReactComponents(content, options ?? defaultOptions)}</>
+}
