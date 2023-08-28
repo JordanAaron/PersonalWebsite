@@ -6,6 +6,7 @@
 .containerNoImage {
   min-width: 15rem;
   max-width: 20rem;
+  height: 15rem;
   margin: 1rem auto;
 }
 
