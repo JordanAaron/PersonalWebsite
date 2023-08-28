@@ -14,7 +14,20 @@
   color: theme(colors[black]);
 }
 
-.descriptionTitle {
+.cardTitle {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.4rem;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.cardTitleUnderline {
+  margin: 0 1.5rem;
+  opacity: 25%;
+  border-color: theme(colors[black]);
+}
+
+.descriptionHeading {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.35rem;
   padding: 0.5rem 0;
@@ -24,6 +37,14 @@
   .containerNoImage {
     min-width: 20rem;
     max-width: 25rem;
+  }
+
+  .cardTitle {
+    font-size: 1.5rem;
+  }
+
+  .cardTitleUnderline {
+    margin: 0 3rem;
   }
 }
 
@@ -37,7 +58,7 @@
     margin: 0;
   }
 
-  .descriptionTitle {
+  .descriptionHeading {
     font-size: 1.6rem;
   }
 }
@@ -47,7 +68,7 @@
     max-width: 25vw;
   }
 
-  .descriptionTitle {
+  .descriptionHeading {
     font-size: 1.8rem;
   }
 }

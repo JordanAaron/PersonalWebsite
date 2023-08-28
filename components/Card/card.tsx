@@ -43,8 +43,9 @@ const cardConfig: CardConfig = {
 export const Card = ({ card }: Props): JSX.Element => {
   const {
     cardImage,
-    cardContentEntriesCollection: { items: cardContentEntries },
-    cardColor
+    cardColor,
+    cardTitle,
+    cardContentEntriesCollection: { items: cardContentEntries }
   } = card
 
   return (
@@ -70,7 +71,12 @@ export const Card = ({ card }: Props): JSX.Element => {
         ${cardConfig[`${cardColor}` as keyof CardConfig].color}
         ${cardImage !== undefined ? '' : 'h-full p-4'} 
       `}>
-        <p>Hello</p>
+        {cardTitle && (
+          <>
+            <p className={styles.cardTitle}>{cardTitle}</p>
+            <hr className={styles.cardTitleUnderline} />
+          </>
+        )}
         <CardContent cardContentEntries={cardContentEntries} />
       </div>
     </div>

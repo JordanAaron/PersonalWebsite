@@ -16,6 +16,7 @@ export interface CardContent {
 export interface CardType {
   entryTitle: string
   cardImage?: Image
+  cardTitle?: string
   cardContentEntriesCollection: {
     items: CardContent[]
   }
