@@ -7,8 +7,8 @@ interface Image extends ImageProps {
 }
 
 export interface CardContent {
-  cardTitle: string
-  cardDescription: {
+  descriptionHeading: string
+  description: {
     json: Document
   }
 }
@@ -16,6 +16,7 @@ export interface CardContent {
 export interface CardType {
   entryTitle: string
   cardImage?: Image
+  cardTitle?: string
   cardContentEntriesCollection: {
     items: CardContent[]
   }
