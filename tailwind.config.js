@@ -6,6 +6,7 @@ module.exports = {
       screens: {
         surfaceDuo: '540px',
         tablet: '768px',
+        largeTablet: '1024px',
         desktop: '1440px'
       },
       container: {
