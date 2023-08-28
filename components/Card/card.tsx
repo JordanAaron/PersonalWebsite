@@ -71,7 +71,7 @@ export const Card = ({ card }: Props): JSX.Element => {
         ${cardConfig[`${cardColor}` as keyof CardConfig].color}
         ${cardImage !== undefined ? '' : 'h-full p-4'} 
       `}>
-        {cardTitle && (
+        {Boolean(cardTitle) && (
           <>
             <p className={styles.cardTitle}>{cardTitle}</p>
             <hr className={styles.cardTitleUnderline} />
