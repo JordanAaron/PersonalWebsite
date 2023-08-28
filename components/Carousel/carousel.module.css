@@ -8,19 +8,6 @@
   overflow: hidden;
 }
 
-.carouselTitle {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 1.4rem;
-  text-align: center;
-  padding-top: 1rem;
-}
-
-.carouselTitleUnderline {
-  margin: 0 1.5rem;
-  opacity: 25%;
-  border-color: theme(colors[black]);
-}
-
 .inner {
   display: inline-flex;
 }
@@ -28,14 +15,4 @@
 .carouselItem {
   text-align: center;
   transition: 1s;
-}
-
-@media (min-width: theme(screens[surfaceDuo])) {
-  .carouselTitle {
-    font-size: 1.5rem;
-  }
-
-  .carouselTitleUnderline {
-    margin: 0 3rem;
-  }
 }
