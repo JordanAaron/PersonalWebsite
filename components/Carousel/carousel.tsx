@@ -37,12 +37,12 @@ export const Carousel = ({
 
   return (
     <>
-      {Boolean(carouselTitle) && (
+      {/* {Boolean(carouselTitle) && (
         <>
           <p className={styles.carouselTitle}>{carouselTitle}</p>
           <hr className={styles.carouselTitleUnderline} />
         </>
-      )}
+      )} */}
       {inputType === 'button' ? (
         <div className={styles.buttonCarouselContainer}>
           <button

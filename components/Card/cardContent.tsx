@@ -34,16 +34,16 @@ export const CardContent = ({ cardContentEntries }: Props): JSX.Element => {
                 transition: '1s'
               }}>
               <div className={`${styles.descriptionContainer}`}>
-                <p className={`${styles.descriptionTitle}`}>{content.cardTitle}</p>
-                <RichText content={content.cardDescription.json} />
+                <p className={`${styles.descriptionTitle}`}>{content.descriptionHeading}</p>
+                <RichText content={content.description.json} />
               </div>
             </div>
           ))}
         </Carousel>
       ) : (
-        <div key={cardContentEntries[0].cardTitle}>
-          <p className={`${styles.descriptionTitle}`}>{cardContentEntries[0].cardTitle}</p>
-          <RichText content={cardContentEntries[0].cardDescription.json} />
+        <div key={cardContentEntries[0].descriptionHeading}>
+          <p className={`${styles.descriptionTitle}`}>{cardContentEntries[0].descriptionHeading}</p>
+          <RichText content={cardContentEntries[0].description.json} />
         </div>
       )}
     </>
