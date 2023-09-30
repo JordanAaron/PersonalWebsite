@@ -1,0 +1,17 @@
+.descriptionHeading {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.35rem;
+  padding: 0.5rem 0;
+}
+
+@media (min-width: theme(screens[tablet])) {
+  .descriptionHeading {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: theme(screens[desktop])) {
+  .descriptionHeading {
+    font-size: 1.8rem;
+  }
+}

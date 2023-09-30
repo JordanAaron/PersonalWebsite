@@ -1,0 +1,39 @@
+.container {
+  max-width: 80vw;
+  margin: 1rem auto;
+}
+
+.cardTitle {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.4rem;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.cardTitleUnderline {
+  margin: 0 1.5rem;
+  opacity: 25%;
+  border-color: theme(colors[black]);
+}
+
+@media (min-width: theme(screens[surfaceDuo])) {
+  .cardTitle {
+    font-size: 1.5rem;
+  }
+
+  .cardTitleUnderline {
+    margin: 0 3rem;
+  }
+}
+
+@media (min-width: theme(screens[tablet])) {
+  .container {
+    max-width: 40vw;
+  }
+}
+
+@media (min-width: theme(screens[largeTablet])) {
+  .container {
+    max-width: 25vw;
+  }
+}

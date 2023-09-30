@@ -2,7 +2,6 @@
 @tailwind base;
 @tailwind components;
 /* purgecss end ignore */
-@tailwind utilities;
 
 html,
 body {
@@ -14,6 +13,8 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+@tailwind utilities;
 
 /* Contentful rich text sometimes returns empty p tags, this is a temporary fix to remove them from the DOM */
 p:empty {
