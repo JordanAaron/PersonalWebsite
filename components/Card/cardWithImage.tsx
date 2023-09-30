@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-import { CardWithImageType } from '../../types/components'
+import type { CardWithImageType } from '../../types/components'
 import { CardContent } from './cardContent'
 import styles from './cardWithImage.module.css'
 
@@ -9,15 +9,13 @@ interface Props {
   card: CardWithImageType
 }
 
-export const CardWithImage = ({ card }: Props) => {
+export const CardWithImage = ({ card }: Props): JSX.Element => {
   const {
     cardImage,
     cardColor,
     cardTitle,
     cardContentEntriesCollection: { items: cardContentEntries }
   } = card
-
-  console.log(cardColor)
 
   return (
     <div className={styles.container}>
