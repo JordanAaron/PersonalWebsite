@@ -5,7 +5,7 @@ import React from 'react'
 import { Sections } from '../components/Sections/sections'
 import { Container } from '../components/container'
 import { Layout } from '../components/layout'
-import { getOGImageById, getPageDataByID } from '../lib/api'
+import { getOGImageById, getPageDataById } from '../lib/api'
 import type { Section } from '../types/sections'
 
 interface Props {
@@ -32,7 +32,7 @@ export default function Index({ preview, ogImageUrl, sections }: Props): JSX.Ele
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const ogImageUrl = await getOGImageById(process.env.NEXT_PUBLIC_HOME_OG_IMAGE_ID)
-  const sections = await getPageDataByID(process.env.HOMEPAGE_ID)
+  const sections = await getPageDataById(process.env.HOMEPAGE_ID)
 
   return {
     props: {

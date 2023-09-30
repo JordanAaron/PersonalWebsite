@@ -11,8 +11,3 @@
 .inner {
   display: inline-flex;
 }
-
-.carouselItem {
-  text-align: center;
-  transition: 1s;
-}

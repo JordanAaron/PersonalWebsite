@@ -15,12 +15,21 @@ export interface CardContent {
 
 export interface CardType {
   entryTitle: string
-  cardImage?: Image
+  cardColor: string
   cardTitle?: string
   cardContentEntriesCollection: {
     items: CardContent[]
   }
+}
+
+export interface CardWithImageType {
+  entryTitle: string
+  cardImage: Image
   cardColor: string
+  cardTitle?: string
+  cardContentEntriesCollection: {
+    items: CardContent[]
+  }
 }
 
 export interface Job {

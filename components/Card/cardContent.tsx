@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import type { CardContent as CardContentType } from '../../types/components'
 import { Carousel } from '../Carousel/carousel'
 import { RichText } from '../RichText/richText'
-import styles from './card.module.css'
+import styles from './cardContent.module.css'
 
 interface Props {
   cardContentEntries: CardContentType[]
@@ -26,21 +26,18 @@ export const CardContent = ({ cardContentEntries }: Props): JSX.Element => {
           {cardContentEntries.map((content, index) => (
             <div
               key={index}
-              className={styles.carouselItem}
               style={{
                 opacity: `${cardContentEntries[activeCard] === content ? '100%' : '0%'}`,
                 width: `${100 / cardContentEntries.length}%`,
                 transition: '1s'
               }}>
-              <div className={`${styles.descriptionContainer}`}>
-                <p className={`${styles.descriptionHeading}`}>{content.descriptionHeading}</p>
-                <RichText content={content.description.json} />
-              </div>
+              <p className={`${styles.descriptionHeading}`}>{content.descriptionHeading}</p>
+              <RichText content={content.description.json} />
             </div>
           ))}
         </Carousel>
       ) : (
-        <div key={cardContentEntries[0].descriptionHeading}>
+        <div>
           <p className={`${styles.descriptionHeading}`}>
             {cardContentEntries[0].descriptionHeading}
           </p>

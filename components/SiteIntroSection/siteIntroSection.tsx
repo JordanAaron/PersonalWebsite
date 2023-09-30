@@ -3,14 +3,14 @@ import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import React from 'react'
 
-import type { CardType } from '../../types/components'
-import { Card } from '../Card/card'
+import type { CardWithImageType } from '../../types/components'
+import { CardWithImage } from '../Card/cardWithImage'
 import styles from './siteIntroSection.module.css'
 
 interface Props {
   title: string
   profile: string
-  card: CardType
+  card: CardWithImageType
 }
 
 export const SiteIntroSection = ({ title, profile, card }: Props): JSX.Element => {
@@ -33,7 +33,7 @@ export const SiteIntroSection = ({ title, profile, card }: Props): JSX.Element =
           </a>
         </div>
       </div>
-      <Card card={card} />
+      <CardWithImage card={card} />
     </section>
   )
 }
