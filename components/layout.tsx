@@ -1,5 +1,6 @@
 import React, { type ReactNode } from 'react'
 
+import { ComingSoonTag } from './ComingSoonTag/comingSoonTag'
 import { Meta } from './meta'
 
 interface Props {
@@ -11,8 +12,9 @@ export const Layout = ({ preview, children }: Props): JSX.Element => {
   return (
     <>
       <Meta />
-      <div className="min-h-screen">
-        <main>{children}</main>
+      <ComingSoonTag />
+      <div style={{ height: '95vh', display: 'grid' }}>
+        <main style={{ alignSelf: 'center' }}>{children}</main>
       </div>
     </>
   )
