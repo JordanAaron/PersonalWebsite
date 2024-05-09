@@ -1,0 +1,9 @@
+@media (min-width: theme(screens[tablet])) {
+  .container {
+    display: grid;
+  }
+
+  .main {
+    align-self: center;
+  }
+}
